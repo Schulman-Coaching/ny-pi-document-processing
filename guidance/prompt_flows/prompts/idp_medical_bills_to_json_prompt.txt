@@ -1,0 +1,134 @@
+Analyze the provided medical bills/invoices from a New York Personal Injury case:
+
+<medical_bills>
+{{doc_text}}
+</medical_bills>
+
+Extract all billing information and return a structured JSON object. Track both billed amounts and payments for lien calculations.
+
+{
+  "billing_provider": {
+    "name": "",
+    "address": "",
+    "phone": "",
+    "fax": "",
+    "tax_id": "",
+    "npi": "",
+    "provider_type": ""  // "Hospital", "Physician", "Physical Therapy", "Radiology", "Ambulance", "DME", "Pharmacy"
+  },
+  "patient_info": {
+    "name": "",
+    "date_of_birth": "",
+    "account_number": "",
+    "medical_record_number": ""
+  },
+  "billing_summary": {
+    "statement_date": "",
+    "billing_period": {
+      "start": "",
+      "end": ""
+    },
+    "total_charges": 0,
+    "total_payments": 0,
+    "total_adjustments": 0,
+    "balance_due": 0,
+    "amount_in_collections": 0
+  },
+  "line_items": [
+    {
+      "date_of_service": "",
+      "cpt_code": "",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "",
+      "quantity": 0,
+      "unit_charge": 0,
+      "total_charge": 0,
+      "diagnosis_pointer": "",
+      "modifier": "",
+      "place_of_service": ""
+    }
+  ],
+  "diagnoses": [
+    {
+      "code": "",
+      "description": "",
+      "pointer": ""
+    }
+  ],
+  "payments_received": [
+    {
+      "date": "",
+      "payer": "",
+      "amount": 0,
+      "check_number": "",
+      "payment_type": ""  // "No-Fault", "Health Insurance", "Patient", "Attorney", "Settlement"
+    }
+  ],
+  "adjustments": [
+    {
+      "date": "",
+      "type": "",  // "Contractual", "Write-off", "Charity", "Bad Debt"
+      "amount": 0,
+      "reason": ""
+    }
+  ],
+  "insurance_info": {
+    "primary_insurance": {
+      "name": "",
+      "policy_number": "",
+      "group_number": "",
+      "claim_number": ""
+    },
+    "no_fault_carrier": {
+      "name": "",
+      "claim_number": "",
+      "adjuster": ""
+    }
+  },
+  "accident_related": {
+    "date_of_accident": "",
+    "accident_type": "",
+    "is_workers_comp": false,
+    "is_no_fault": false,
+    "is_third_party_liability": false
+  },
+  "lien_info": {
+    "lien_filed": false,
+    "lien_amount": 0,
+    "lien_holder": "",
+    "erisa_plan": false,
+    "medicare_conditional_payment": false,
+    "medicaid_lien": false
+  },
+  "collection_status": {
+    "in_collections": false,
+    "collection_agency": "",
+    "collection_date": ""
+  },
+  "treatment_summary": {
+    "emergency_room_charges": 0,
+    "inpatient_charges": 0,
+    "outpatient_charges": 0,
+    "surgery_charges": 0,
+    "radiology_charges": 0,
+    "physical_therapy_charges": 0,
+    "medication_charges": 0,
+    "dme_charges": 0,
+    "ambulance_charges": 0,
+    "other_charges": 0
+  },
+  "special_damages_calculation": {
+    "total_medical_specials": 0,
+    "no_fault_exhausted": false,
+    "health_insurance_paid": 0,
+    "out_of_pocket": 0,
+    "outstanding_balance": 0
+  }
+}
+
+Ensure all monetary values are numbers (not strings).
+Extract all CPT/HCPCS codes for treatment verification.
+Calculate totals for special damages compilation.
+Identify any liens or subrogation interests.
+Return only valid JSON with no additional commentary.

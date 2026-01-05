@@ -1,0 +1,265 @@
+{
+  "billing_provider": {
+    "name": "Manhattan Spine & Pain Medicine",
+    "address": "635 Madison Avenue, Suite 1400, New York, NY 10022",
+    "phone": "(212) 555-7890",
+    "fax": "(212) 555-7891",
+    "tax_id": "45-1234567",
+    "npi": "1234567890",
+    "provider_type": "Physician"
+  },
+  "patient_info": {
+    "name": "Maria Santos",
+    "date_of_birth": "07/22/1985",
+    "account_number": "ACC-MS-041524",
+    "medical_record_number": "MSP-2024-4521"
+  },
+  "billing_summary": {
+    "statement_date": "05/01/2024",
+    "billing_period": {
+      "start": "03/22/2024",
+      "end": "04/15/2024"
+    },
+    "total_charges": 12850.00,
+    "total_payments": 8750.00,
+    "total_adjustments": 1250.00,
+    "balance_due": 2850.00,
+    "amount_in_collections": 0
+  },
+  "line_items": [
+    {
+      "date_of_service": "03/22/2024",
+      "cpt_code": "99204",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Office Visit - New Patient, Comprehensive",
+      "quantity": 1,
+      "unit_charge": 425.00,
+      "total_charge": 425.00,
+      "diagnosis_pointer": "A,B,C,D",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "04/01/2024",
+      "cpt_code": "72148",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "MRI Lumbar Spine w/o Contrast",
+      "quantity": 1,
+      "unit_charge": 2400.00,
+      "total_charge": 2400.00,
+      "diagnosis_pointer": "B,D",
+      "modifier": "",
+      "place_of_service": "22"
+    },
+    {
+      "date_of_service": "04/01/2024",
+      "cpt_code": "72141",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "MRI Cervical Spine w/o Contrast",
+      "quantity": 1,
+      "unit_charge": 2400.00,
+      "total_charge": 2400.00,
+      "diagnosis_pointer": "A,C",
+      "modifier": "",
+      "place_of_service": "22"
+    },
+    {
+      "date_of_service": "04/10/2024",
+      "cpt_code": "95886",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "EMG - Each Extremity",
+      "quantity": 2,
+      "unit_charge": 450.00,
+      "total_charge": 900.00,
+      "diagnosis_pointer": "C",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "04/10/2024",
+      "cpt_code": "95913",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Nerve Conduction Studies - 13+ Tests",
+      "quantity": 1,
+      "unit_charge": 725.00,
+      "total_charge": 725.00,
+      "diagnosis_pointer": "C",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "04/15/2024",
+      "cpt_code": "99214",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Office Visit - Established, Moderate",
+      "quantity": 1,
+      "unit_charge": 225.00,
+      "total_charge": 225.00,
+      "diagnosis_pointer": "A,B,C,D",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "04/15/2024",
+      "cpt_code": "64483",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Transforaminal Epidural Injection C5-C6",
+      "quantity": 1,
+      "unit_charge": 2850.00,
+      "total_charge": 2850.00,
+      "diagnosis_pointer": "A,C",
+      "modifier": "",
+      "place_of_service": "24"
+    },
+    {
+      "date_of_service": "04/15/2024",
+      "cpt_code": "77003",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Fluoroscopic Guidance - Spinal Injection",
+      "quantity": 1,
+      "unit_charge": 425.00,
+      "total_charge": 425.00,
+      "diagnosis_pointer": "A,C",
+      "modifier": "26",
+      "place_of_service": "24"
+    },
+    {
+      "date_of_service": "04/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "J1030",
+      "revenue_code": "",
+      "description": "Depo-Medrol 80mg Injection",
+      "quantity": 1,
+      "unit_charge": 125.00,
+      "total_charge": 125.00,
+      "diagnosis_pointer": "A,C",
+      "modifier": "",
+      "place_of_service": "24"
+    },
+    {
+      "date_of_service": "04/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "J3490",
+      "revenue_code": "",
+      "description": "Marcaine 0.5% - 10ml",
+      "quantity": 1,
+      "unit_charge": 75.00,
+      "total_charge": 75.00,
+      "diagnosis_pointer": "A,C",
+      "modifier": "",
+      "place_of_service": "24"
+    },
+    {
+      "date_of_service": "04/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Surgical Suite Fee",
+      "quantity": 1,
+      "unit_charge": 2300.00,
+      "total_charge": 2300.00,
+      "diagnosis_pointer": "A,C",
+      "modifier": "",
+      "place_of_service": "24"
+    }
+  ],
+  "diagnoses": [
+    {
+      "code": "M50.122",
+      "description": "Cervical disc herniation C5-C6, left",
+      "pointer": "A"
+    },
+    {
+      "code": "M51.26",
+      "description": "Lumbar disc bulge L4-L5",
+      "pointer": "B"
+    },
+    {
+      "code": "M54.12",
+      "description": "Cervical radiculopathy",
+      "pointer": "C"
+    },
+    {
+      "code": "M54.16",
+      "description": "Lumbar radiculopathy, left",
+      "pointer": "D"
+    }
+  ],
+  "payments_received": [
+    {
+      "date": "04/25/2024",
+      "payer": "State Farm No-Fault",
+      "amount": 8750.00,
+      "check_number": "EFT-7845688",
+      "payment_type": "No-Fault"
+    }
+  ],
+  "adjustments": [
+    {
+      "date": "04/25/2024",
+      "type": "Contractual",
+      "amount": 1250.00,
+      "reason": "No-Fault fee schedule adjustment"
+    }
+  ],
+  "insurance_info": {
+    "primary_insurance": {
+      "name": "State Farm Insurance",
+      "policy_number": "SF-98765432",
+      "group_number": "",
+      "claim_number": "24-C7-8521-A"
+    },
+    "no_fault_carrier": {
+      "name": "State Farm Insurance",
+      "claim_number": "24-NF-8521",
+      "adjuster": "Patricia Hernandez"
+    }
+  },
+  "accident_related": {
+    "date_of_accident": "03/15/2024",
+    "accident_type": "Motor Vehicle Accident",
+    "is_workers_comp": false,
+    "is_no_fault": true,
+    "is_third_party_liability": true
+  },
+  "lien_info": {
+    "lien_filed": true,
+    "lien_amount": 2850.00,
+    "lien_holder": "Manhattan Spine & Pain Medicine",
+    "erisa_plan": false,
+    "medicare_conditional_payment": false,
+    "medicaid_lien": false
+  },
+  "collection_status": {
+    "in_collections": false,
+    "collection_agency": "",
+    "collection_date": ""
+  },
+  "treatment_summary": {
+    "emergency_room_charges": 0,
+    "inpatient_charges": 0,
+    "outpatient_charges": 650.00,
+    "surgery_charges": 5775.00,
+    "radiology_charges": 4800.00,
+    "physical_therapy_charges": 0,
+    "medication_charges": 0,
+    "dme_charges": 0,
+    "ambulance_charges": 0,
+    "other_charges": 1625.00
+  },
+  "special_damages_calculation": {
+    "total_medical_specials": 12850.00,
+    "no_fault_exhausted": false,
+    "health_insurance_paid": 0,
+    "out_of_pocket": 0,
+    "outstanding_balance": 2850.00
+  }
+}

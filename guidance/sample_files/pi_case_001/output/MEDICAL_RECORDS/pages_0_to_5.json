@@ -1,0 +1,231 @@
+{
+  "document_info": {
+    "facility_name": "NYC Health + Hospitals/Bellevue",
+    "facility_address": "462 First Avenue, New York, NY 10016",
+    "facility_phone": "(212) 562-4141",
+    "record_type": "Emergency Room",
+    "date_of_service": "03/15/2024",
+    "date_range": {
+      "start": "03/15/2024",
+      "end": "03/15/2024"
+    }
+  },
+  "patient_info": {
+    "name": "Maria Santos",
+    "date_of_birth": "07/22/1985",
+    "age_at_visit": 38,
+    "medical_record_number": "BEL-2024-789456",
+    "account_number": "ACC-2024-031524-001"
+  },
+  "accident_info": {
+    "date_of_accident": "03/15/2024",
+    "mechanism_of_injury": "Motor Vehicle Accident",
+    "accident_description": "Patient was rear-ended while stopped at red light on 3rd Avenue and 42nd Street. Airbags deployed. Patient wearing seatbelt."
+  },
+  "chief_complaint": "Neck pain, lower back pain, headache following motor vehicle accident",
+  "history_of_present_illness": "38 y/o female presents to ED via EMS following MVA approximately 2 hours ago. Patient was the restrained driver of a vehicle that was rear-ended while stopped at a traffic light. She reports immediate onset of neck pain and headache. She denies loss of consciousness. She reports pain radiating down her left arm. Back pain started approximately 30 minutes after the accident.",
+  "diagnoses": [
+    {
+      "description": "Cervical sprain/strain",
+      "icd_code": "S13.4XXA",
+      "body_part": "Cervical spine",
+      "laterality": "N/A",
+      "is_primary": true
+    },
+    {
+      "description": "Lumbar sprain/strain",
+      "icd_code": "S33.5XXA",
+      "body_part": "Lumbar spine",
+      "laterality": "N/A",
+      "is_primary": false
+    },
+    {
+      "description": "Left shoulder contusion",
+      "icd_code": "S40.012A",
+      "body_part": "Shoulder",
+      "laterality": "Left",
+      "is_primary": false
+    },
+    {
+      "description": "Post-traumatic headache",
+      "icd_code": "G44.329",
+      "body_part": "Head",
+      "laterality": "N/A",
+      "is_primary": false
+    }
+  ],
+  "injuries": [
+    {
+      "body_part": "Cervical spine",
+      "injury_type": "Sprain/Strain",
+      "severity": "Moderate",
+      "description": "Tenderness to palpation over C4-C6 paraspinal muscles with decreased range of motion"
+    },
+    {
+      "body_part": "Lumbar spine",
+      "injury_type": "Sprain/Strain",
+      "severity": "Moderate",
+      "description": "Paraspinal muscle spasm L3-L5 with positive straight leg raise on left"
+    },
+    {
+      "body_part": "Left shoulder",
+      "injury_type": "Contusion",
+      "severity": "Mild",
+      "description": "Ecchymosis over left deltoid region from seatbelt"
+    }
+  ],
+  "imaging_findings": [
+    {
+      "study_type": "X-Ray",
+      "body_part": "Cervical spine",
+      "date": "03/15/2024",
+      "findings": "Loss of normal cervical lordosis. No fracture or dislocation identified. Mild disc space narrowing at C5-C6.",
+      "impression": "Cervical muscle spasm. Degenerative changes at C5-C6."
+    },
+    {
+      "study_type": "X-Ray",
+      "body_part": "Lumbar spine",
+      "date": "03/15/2024",
+      "findings": "Normal lumbar lordosis. No acute fracture. Mild disc space narrowing at L4-L5.",
+      "impression": "No acute traumatic injury. Mild degenerative changes."
+    }
+  ],
+  "treatment_provided": [
+    {
+      "type": "Medication",
+      "description": "Toradol 30mg IV",
+      "date": "03/15/2024",
+      "provider": "Dr. James Chen"
+    },
+    {
+      "type": "Medication",
+      "description": "Flexeril 10mg PO",
+      "date": "03/15/2024",
+      "provider": "Dr. James Chen"
+    },
+    {
+      "type": "Procedure",
+      "description": "Cervical collar applied",
+      "date": "03/15/2024",
+      "provider": "RN Sarah Williams"
+    }
+  ],
+  "medications_prescribed": [
+    {
+      "name": "Cyclobenzaprine (Flexeril)",
+      "dosage": "10mg",
+      "frequency": "TID",
+      "purpose": "Muscle relaxant"
+    },
+    {
+      "name": "Naproxen",
+      "dosage": "500mg",
+      "frequency": "BID",
+      "purpose": "Anti-inflammatory"
+    },
+    {
+      "name": "Tramadol",
+      "dosage": "50mg",
+      "frequency": "Q6H PRN",
+      "purpose": "Pain management"
+    }
+  ],
+  "physical_examination": {
+    "vitals": {
+      "blood_pressure": "142/88",
+      "pulse": "92",
+      "temperature": "98.6F"
+    },
+    "findings": [
+      "Alert and oriented x3",
+      "HEENT: No signs of head trauma, pupils equal and reactive",
+      "Neck: Tenderness over posterior cervical paraspinal muscles C4-C6, decreased ROM in all planes",
+      "Back: Paraspinal tenderness L3-L5, positive straight leg raise left at 45 degrees",
+      "Neurological: 5/5 strength bilateral upper and lower extremities, sensation intact, DTRs 2+ and symmetric"
+    ]
+  },
+  "functional_limitations": {
+    "range_of_motion": [
+      {
+        "body_part": "Cervical spine - Flexion",
+        "normal_range": "45 degrees",
+        "measured_range": "25 degrees",
+        "percent_loss": 44
+      },
+      {
+        "body_part": "Cervical spine - Extension",
+        "normal_range": "45 degrees",
+        "measured_range": "20 degrees",
+        "percent_loss": 56
+      },
+      {
+        "body_part": "Cervical spine - Rotation",
+        "normal_range": "80 degrees",
+        "measured_range": "50 degrees",
+        "percent_loss": 38
+      },
+      {
+        "body_part": "Lumbar spine - Flexion",
+        "normal_range": "60 degrees",
+        "measured_range": "35 degrees",
+        "percent_loss": 42
+      }
+    ],
+    "work_restrictions": [
+      "No lifting greater than 10 lbs",
+      "No prolonged sitting greater than 30 minutes",
+      "No repetitive bending or twisting"
+    ],
+    "activity_restrictions": [
+      "No driving for 1 week",
+      "Limited household activities"
+    ],
+    "disability_duration": "2 weeks initial"
+  },
+  "referrals": [
+    {
+      "specialty": "Orthopedic Surgery",
+      "reason": "Cervical and lumbar spine evaluation",
+      "date": "03/15/2024"
+    },
+    {
+      "specialty": "Physical Therapy",
+      "reason": "Cervical and lumbar rehabilitation",
+      "date": "03/15/2024"
+    },
+    {
+      "specialty": "Neurology",
+      "reason": "Persistent headaches and left arm radiculopathy",
+      "date": "03/15/2024"
+    }
+  ],
+  "follow_up": {
+    "recommended": "Primary care in 3-5 days",
+    "date": "03/20/2024",
+    "instructions": "Return to ED for worsening pain, numbness, weakness, or difficulty walking"
+  },
+  "prognosis": "Guarded. Patient will require ongoing treatment and therapy. Full recovery expected with appropriate treatment, though some patients develop chronic symptoms.",
+  "causation_statement": "The injuries described above are consistent with and causally related to the motor vehicle accident that occurred on 03/15/2024.",
+  "ny_serious_injury_indicators": {
+    "permanent_consequential_limitation": false,
+    "significant_limitation_of_use": true,
+    "permanent_loss_of_use": false,
+    "fracture": false,
+    "dismemberment": false,
+    "significant_disfigurement": false,
+    "loss_of_fetus": false,
+    "ninety_one_eighty_disability": true,
+    "supporting_language": [
+      "Decreased ROM in all planes of cervical spine (44-56% loss)",
+      "42% loss of lumbar flexion",
+      "Work restrictions preventing return to employment",
+      "Disability duration initially 2 weeks with likely extension"
+    ]
+  },
+  "provider_info": {
+    "name": "James Chen, MD",
+    "credentials": "MD, FACEP",
+    "specialty": "Emergency Medicine",
+    "npi": "1234567890"
+  }
+}

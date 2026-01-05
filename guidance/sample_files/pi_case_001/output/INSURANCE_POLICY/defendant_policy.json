@@ -1,0 +1,205 @@
+{
+  "policy_info": {
+    "insurance_company": "Progressive Commercial Lines Insurance Company",
+    "policy_number": "PC-55512345",
+    "policy_period": {
+      "effective_date": "12/01/2023",
+      "expiration_date": "12/01/2024"
+    },
+    "policy_type": "Commercial Auto",
+    "policy_form": "CA 00 01",
+    "naic_code": "44416"
+  },
+  "named_insured": {
+    "name": "Johnson Delivery Services LLC",
+    "address": {
+      "street": "1500 Broadway, Suite 2500",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10036"
+    },
+    "additional_insureds": [
+      "Robert Thompson (Employee/Permissive User)"
+    ]
+  },
+  "vehicles_covered": [
+    {
+      "year": "2019",
+      "make": "Ford",
+      "model": "F-150 XLT",
+      "vin": "1FTEW1EP5KFA98765",
+      "vehicle_number": 1,
+      "garaging_address": "1500 Broadway, New York, NY 10036"
+    },
+    {
+      "year": "2020",
+      "make": "Ford",
+      "model": "Transit 250",
+      "vin": "1FTYR2CM5LKB45678",
+      "vehicle_number": 2,
+      "garaging_address": "1500 Broadway, New York, NY 10036"
+    },
+    {
+      "year": "2022",
+      "make": "Ford",
+      "model": "E-Transit",
+      "vin": "1FTBW9CK5NKA12345",
+      "vehicle_number": 3,
+      "garaging_address": "1500 Broadway, New York, NY 10036"
+    }
+  ],
+  "coverages": {
+    "bodily_injury_liability": {
+      "per_person": 250000,
+      "per_accident": 500000,
+      "combined_single_limit": 0,
+      "deductible": 0
+    },
+    "property_damage_liability": {
+      "limit": 100000,
+      "deductible": 0
+    },
+    "personal_injury_protection_no_fault": {
+      "basic_pip": 50000,
+      "additional_pip": 0,
+      "obel": 0,
+      "apip": 0,
+      "work_loss_monthly_max": 2000,
+      "death_benefit": 2000
+    },
+    "uninsured_motorist": {
+      "bodily_injury_per_person": 250000,
+      "bodily_injury_per_accident": 500000,
+      "property_damage": 0
+    },
+    "underinsured_motorist_sum": {
+      "per_person": 0,
+      "per_accident": 0
+    },
+    "medical_payments": {
+      "limit": 10000
+    },
+    "collision": {
+      "limit": "ACV",
+      "deductible": 1000
+    },
+    "comprehensive": {
+      "limit": "ACV",
+      "deductible": 1000
+    },
+    "rental_reimbursement": {
+      "daily_limit": 75,
+      "max_days": 30,
+      "total_limit": 2250
+    },
+    "towing_labor": {
+      "limit": 150
+    }
+  },
+  "ny_specific_coverages": {
+    "supplementary_uninsured_motorist_sum": {
+      "per_person": 0,
+      "per_accident": 0,
+      "stacked": false
+    },
+    "death_indemnity": 2000,
+    "obel_elected": false,
+    "full_glass_coverage": false
+  },
+  "exclusions": [
+    "Intentional acts",
+    "Vehicles driven by unlisted drivers without permission",
+    "Personal use by employees without authorization",
+    "Racing or demolition contests"
+  ],
+  "endorsements": [
+    {
+      "number": "CA 99 10",
+      "name": "Motor Carrier Coverage Form",
+      "description": "Extends coverage for hired and non-owned vehicles"
+    },
+    {
+      "number": "IL 00 21",
+      "name": "Nuclear Energy Liability Exclusion",
+      "description": "Standard exclusion"
+    }
+  ],
+  "premium_info": {
+    "total_premium": 18750,
+    "payment_plan": "Annual",
+    "breakdown": [
+      {
+        "coverage": "Bodily Injury Liability",
+        "premium": 7250
+      },
+      {
+        "coverage": "Property Damage Liability",
+        "premium": 2840
+      },
+      {
+        "coverage": "No-Fault (PIP)",
+        "premium": 1890
+      },
+      {
+        "coverage": "UM",
+        "premium": 1420
+      },
+      {
+        "coverage": "Physical Damage",
+        "premium": 4150
+      },
+      {
+        "coverage": "Other Coverages",
+        "premium": 1200
+      }
+    ]
+  },
+  "drivers_listed": [
+    {
+      "name": "Michael Johnson",
+      "date_of_birth": "03/15/1975",
+      "license_number": "J456-7890-1234",
+      "relationship": "Owner/Principal",
+      "driver_status": "Rated"
+    },
+    {
+      "name": "Robert Thompson",
+      "date_of_birth": "11/03/1992",
+      "license_number": "T987-6543-2100",
+      "relationship": "Employee",
+      "driver_status": "Rated"
+    },
+    {
+      "name": "Carlos Mendez",
+      "date_of_birth": "06/21/1988",
+      "license_number": "M234-5678-9012",
+      "relationship": "Employee",
+      "driver_status": "Rated"
+    }
+  ],
+  "agent_info": {
+    "name": "Commercial Lines Department",
+    "agency": "Progressive Direct",
+    "phone": "1-800-776-4737",
+    "address": "6300 Wilson Mills Road, Mayfield Village, OH 44143"
+  },
+  "claims_info": {
+    "claims_phone": "1-800-274-4499",
+    "claims_address": "Progressive Claims, PO Box 94739, Cleveland, OH 44101",
+    "claim_number": "24-COM-7845621"
+  },
+  "liability_analysis": {
+    "meets_ny_minimum": true,
+    "ny_minimum_requirements": {
+      "bi_per_person": 25000,
+      "bi_per_accident": 50000,
+      "pd": 10000,
+      "pip": 50000
+    },
+    "total_available_bi": 250000,
+    "total_available_um_sum": 0,
+    "stacking_available": false
+  },
+  "document_type": "Declarations Page",
+  "additional_notes": "Defendant's commercial policy. $250,000 per person BI liability available. Company is vicariously liable for employee's negligence under respondeat superior. SUM coverage waived."
+}

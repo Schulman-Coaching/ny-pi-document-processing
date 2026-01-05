@@ -1,0 +1,197 @@
+{
+  "billing_provider": {
+    "name": "ActiveCare Physical Therapy",
+    "address": "220 East 42nd Street, Suite 500, New York, NY 10017",
+    "phone": "(212) 555-3456",
+    "fax": "(212) 555-3457",
+    "tax_id": "47-8901234",
+    "npi": "1357924680",
+    "provider_type": "Physical Therapy"
+  },
+  "patient_info": {
+    "name": "Maria Santos",
+    "date_of_birth": "07/22/1985",
+    "account_number": "PT-2024-MS-0322",
+    "medical_record_number": "AC-789012"
+  },
+  "billing_summary": {
+    "statement_date": "05/15/2024",
+    "billing_period": {
+      "start": "03/25/2024",
+      "end": "05/10/2024"
+    },
+    "total_charges": 6400.00,
+    "total_payments": 4800.00,
+    "total_adjustments": 600.00,
+    "balance_due": 1000.00,
+    "amount_in_collections": 0
+  },
+  "line_items": [
+    {
+      "date_of_service": "03/25/2024",
+      "cpt_code": "97161",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "PT Evaluation - High Complexity",
+      "quantity": 1,
+      "unit_charge": 275.00,
+      "total_charge": 275.00,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "03/25/2024-05/10/2024",
+      "cpt_code": "97110",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Therapeutic Exercise - 15 min units",
+      "quantity": 48,
+      "unit_charge": 50.00,
+      "total_charge": 2400.00,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "03/25/2024-05/10/2024",
+      "cpt_code": "97140",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Manual Therapy - 15 min units",
+      "quantity": 32,
+      "unit_charge": 55.00,
+      "total_charge": 1760.00,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "03/25/2024-05/10/2024",
+      "cpt_code": "97035",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Ultrasound - 15 min",
+      "quantity": 16,
+      "unit_charge": 35.00,
+      "total_charge": 560.00,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "03/25/2024-05/10/2024",
+      "cpt_code": "97014",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Electrical Stimulation - Unattended",
+      "quantity": 16,
+      "unit_charge": 40.00,
+      "total_charge": 640.00,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "11"
+    },
+    {
+      "date_of_service": "03/25/2024-05/10/2024",
+      "cpt_code": "97530",
+      "hcpcs_code": "",
+      "revenue_code": "",
+      "description": "Therapeutic Activities - 15 min units",
+      "quantity": 16,
+      "unit_charge": 48.00,
+      "total_charge": 768.00,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "11"
+    }
+  ],
+  "diagnoses": [
+    {
+      "code": "S13.4XXD",
+      "description": "Cervical sprain/strain, subsequent encounter",
+      "pointer": "A"
+    },
+    {
+      "code": "S33.5XXD",
+      "description": "Lumbar sprain/strain, subsequent encounter",
+      "pointer": "B"
+    }
+  ],
+  "payments_received": [
+    {
+      "date": "04/30/2024",
+      "payer": "State Farm No-Fault",
+      "amount": 2400.00,
+      "check_number": "EFT-7845701",
+      "payment_type": "No-Fault"
+    },
+    {
+      "date": "05/15/2024",
+      "payer": "State Farm No-Fault",
+      "amount": 2400.00,
+      "check_number": "EFT-7845755",
+      "payment_type": "No-Fault"
+    }
+  ],
+  "adjustments": [
+    {
+      "date": "05/15/2024",
+      "type": "Contractual",
+      "amount": 600.00,
+      "reason": "No-Fault fee schedule adjustment"
+    }
+  ],
+  "insurance_info": {
+    "primary_insurance": {
+      "name": "State Farm Insurance",
+      "policy_number": "SF-98765432",
+      "group_number": "",
+      "claim_number": "24-C7-8521-A"
+    },
+    "no_fault_carrier": {
+      "name": "State Farm Insurance",
+      "claim_number": "24-NF-8521",
+      "adjuster": "Patricia Hernandez"
+    }
+  },
+  "accident_related": {
+    "date_of_accident": "03/15/2024",
+    "accident_type": "Motor Vehicle Accident",
+    "is_workers_comp": false,
+    "is_no_fault": true,
+    "is_third_party_liability": true
+  },
+  "lien_info": {
+    "lien_filed": true,
+    "lien_amount": 1000.00,
+    "lien_holder": "ActiveCare Physical Therapy",
+    "erisa_plan": false,
+    "medicare_conditional_payment": false,
+    "medicaid_lien": false
+  },
+  "collection_status": {
+    "in_collections": false,
+    "collection_agency": "",
+    "collection_date": ""
+  },
+  "treatment_summary": {
+    "emergency_room_charges": 0,
+    "inpatient_charges": 0,
+    "outpatient_charges": 0,
+    "surgery_charges": 0,
+    "radiology_charges": 0,
+    "physical_therapy_charges": 6400.00,
+    "medication_charges": 0,
+    "dme_charges": 0,
+    "ambulance_charges": 0,
+    "other_charges": 0
+  },
+  "special_damages_calculation": {
+    "total_medical_specials": 6400.00,
+    "no_fault_exhausted": false,
+    "health_insurance_paid": 0,
+    "out_of_pocket": 0,
+    "outstanding_balance": 1000.00
+  }
+}

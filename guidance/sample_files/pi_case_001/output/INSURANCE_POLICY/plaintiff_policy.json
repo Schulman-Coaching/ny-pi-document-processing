@@ -1,0 +1,177 @@
+{
+  "policy_info": {
+    "insurance_company": "State Farm Mutual Automobile Insurance Company",
+    "policy_number": "SF-98765432",
+    "policy_period": {
+      "effective_date": "01/15/2024",
+      "expiration_date": "07/15/2024"
+    },
+    "policy_type": "Personal Auto",
+    "policy_form": "PAP",
+    "naic_code": "25178"
+  },
+  "named_insured": {
+    "name": "Maria Santos",
+    "address": {
+      "street": "425 East 58th Street, Apt 12B",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10022"
+    },
+    "additional_insureds": []
+  },
+  "vehicles_covered": [
+    {
+      "year": "2021",
+      "make": "Honda",
+      "model": "Accord EX-L",
+      "vin": "1HGCV1F34MA123456",
+      "vehicle_number": 1,
+      "garaging_address": "425 East 58th Street, New York, NY 10022"
+    }
+  ],
+  "coverages": {
+    "bodily_injury_liability": {
+      "per_person": 100000,
+      "per_accident": 300000,
+      "combined_single_limit": 0,
+      "deductible": 0
+    },
+    "property_damage_liability": {
+      "limit": 50000,
+      "deductible": 0
+    },
+    "personal_injury_protection_no_fault": {
+      "basic_pip": 50000,
+      "additional_pip": 0,
+      "obel": 25000,
+      "apip": 0,
+      "work_loss_monthly_max": 2000,
+      "death_benefit": 2000
+    },
+    "uninsured_motorist": {
+      "bodily_injury_per_person": 100000,
+      "bodily_injury_per_accident": 300000,
+      "property_damage": 0
+    },
+    "underinsured_motorist_sum": {
+      "per_person": 100000,
+      "per_accident": 300000
+    },
+    "medical_payments": {
+      "limit": 5000
+    },
+    "collision": {
+      "limit": "ACV",
+      "deductible": 500
+    },
+    "comprehensive": {
+      "limit": "ACV",
+      "deductible": 250
+    },
+    "rental_reimbursement": {
+      "daily_limit": 40,
+      "max_days": 30,
+      "total_limit": 1200
+    },
+    "towing_labor": {
+      "limit": 100
+    }
+  },
+  "ny_specific_coverages": {
+    "supplementary_uninsured_motorist_sum": {
+      "per_person": 100000,
+      "per_accident": 300000,
+      "stacked": false
+    },
+    "death_indemnity": 2000,
+    "obel_elected": true,
+    "full_glass_coverage": true
+  },
+  "exclusions": [
+    "Intentional injury",
+    "Racing or speed contests",
+    "Vehicles with fewer than four wheels",
+    "Vehicles used for livery or ride-sharing without endorsement"
+  ],
+  "endorsements": [
+    {
+      "number": "PP 03 06",
+      "name": "Supplementary Uninsured/Underinsured Motorist Coverage",
+      "description": "Provides SUM coverage matching liability limits"
+    },
+    {
+      "number": "PP 03 23",
+      "name": "OBEL Coverage",
+      "description": "Optional Basic Economic Loss coverage - additional $25,000"
+    }
+  ],
+  "premium_info": {
+    "total_premium": 2847,
+    "payment_plan": "Semi-Annual",
+    "breakdown": [
+      {
+        "coverage": "Bodily Injury Liability",
+        "premium": 612
+      },
+      {
+        "coverage": "Property Damage Liability",
+        "premium": 248
+      },
+      {
+        "coverage": "No-Fault (PIP)",
+        "premium": 425
+      },
+      {
+        "coverage": "SUM/UM",
+        "premium": 387
+      },
+      {
+        "coverage": "Collision",
+        "premium": 624
+      },
+      {
+        "coverage": "Comprehensive",
+        "premium": 312
+      },
+      {
+        "coverage": "Other Coverages",
+        "premium": 239
+      }
+    ]
+  },
+  "drivers_listed": [
+    {
+      "name": "Maria Santos",
+      "date_of_birth": "07/22/1985",
+      "license_number": "S123-4567-8901",
+      "relationship": "Named Insured",
+      "driver_status": "Rated"
+    }
+  ],
+  "agent_info": {
+    "name": "Anthony Russo",
+    "agency": "Russo Insurance Agency",
+    "phone": "(212) 555-8765",
+    "address": "1250 Lexington Avenue, New York, NY 10028"
+  },
+  "claims_info": {
+    "claims_phone": "1-800-732-5246",
+    "claims_address": "State Farm Claims, PO Box 2350, Bloomington, IL 61702",
+    "claim_number": "24-C7-8521-A"
+  },
+  "liability_analysis": {
+    "meets_ny_minimum": true,
+    "ny_minimum_requirements": {
+      "bi_per_person": 25000,
+      "bi_per_accident": 50000,
+      "pd": 10000,
+      "pip": 50000
+    },
+    "total_available_bi": 100000,
+    "total_available_um_sum": 200000,
+    "stacking_available": false
+  },
+  "document_type": "Declarations Page",
+  "additional_notes": "Plaintiff's policy provides first-party No-Fault benefits and SUM coverage available if defendant's policy is insufficient."
+}

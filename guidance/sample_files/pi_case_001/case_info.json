@@ -1,0 +1,53 @@
+{
+  "case_id": "pi_case_001",
+  "case_name": "Santos v. Johnson Delivery Services LLC",
+  "case_type": "Motor Vehicle Accident - Rear-End Collision",
+  "jurisdiction": "New York County (Manhattan)",
+  "court": "Supreme Court of the State of New York",
+  "index_number": "Pending",
+  "date_opened": "2024-03-20",
+  "status": "Pre-Litigation",
+  "attorney": {
+    "name": "Sample Attorney",
+    "firm": "Sample Law Firm",
+    "bar_number": "1234567"
+  },
+  "key_dates": {
+    "date_of_accident": "2024-03-15",
+    "date_of_retention": "2024-03-20",
+    "statute_of_limitations": "2027-03-15",
+    "no_fault_deadline": "2024-03-15"
+  },
+  "parties": {
+    "plaintiff": "Maria Santos",
+    "defendants": [
+      "Robert Thompson (Driver)",
+      "Johnson Delivery Services LLC (Employer/Owner)"
+    ]
+  },
+  "theories_of_liability": [
+    "Negligence - Following Too Closely (VTL 1129(a))",
+    "Negligence - Failure to Maintain Proper Lookout",
+    "Respondeat Superior - Employer Liability",
+    "Negligent Hiring/Supervision (if applicable)"
+  ],
+  "document_inventory": {
+    "medical_records": [
+      "Bellevue Hospital ER Records (03/15/2024)",
+      "Manhattan Spine & Pain Medicine Records (03/22/2024 - 04/15/2024)"
+    ],
+    "police_reports": [
+      "NYPD MV-104 Report #2024-17-003521"
+    ],
+    "insurance_policies": [
+      "Plaintiff Policy - State Farm SF-98765432",
+      "Defendant Policy - Progressive Commercial PC-55512345"
+    ],
+    "medical_bills": [
+      "Bellevue Hospital - $8,745.00",
+      "Manhattan Spine & Pain Medicine - $12,850.00",
+      "ActiveCare Physical Therapy - $6,400.00"
+    ]
+  },
+  "notes": "Sample test case for IDP system demonstration. All data is fictional."
+}

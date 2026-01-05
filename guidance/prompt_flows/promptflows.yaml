@@ -1,0 +1,919 @@
+
+  IDPPromptFlowRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName:
+        Fn::Sub: ${AWS::StackName}-IDPPromptFlowRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: bedrock.amazonaws.com
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: AmazonBedrockPrompt
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'bedrock:GetPrompt'
+                Resource:
+                  # Original prompts
+                  - Fn::GetAtt: [ClassifyPromptVersion1, Arn]
+                  - Fn::GetAtt: [BankStatementPromptVersion1, Arn]
+                  - Fn::GetAtt: [DriversLicensePromptVersion1, Arn]
+                  - Fn::GetAtt: [DriversLicenseCheckPromptVersion1, Arn]
+                  - Fn::GetAtt: [URLAAnalyzePromptVersion1, Arn]
+                  - Fn::GetAtt: [URLAToJsonPromptVersion1, Arn]
+                  - Fn::GetAtt: [ForReviewPromptVersion1, Arn]
+                  # NY Personal Injury prompts
+                  - Fn::GetAtt: [PIClassifyPromptVersion1, Arn]
+                  - Fn::GetAtt: [MedicalRecordsPromptVersion1, Arn]
+                  - Fn::GetAtt: [PoliceReportPromptVersion1, Arn]
+                  - Fn::GetAtt: [InsurancePolicyPromptVersion1, Arn]
+                  - Fn::GetAtt: [MedicalBillsPromptVersion1, Arn]
+        - PolicyName: AmazonBedrockModel
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'bedrock:InvokeModel'
+                Resource:
+                  Fn::Sub: arn:aws:bedrock:us-east-1::foundation-model/${BedrockPromptModelId}
+        - PolicyName: AmazonBedrockFlowS3Bucket
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 's3:GetObject'
+                  - 's3:PutObject'
+                Resource:
+                  Fn::Sub: ${DestinationS3Bucket.Arn}/*
+
+  # ============================================================================
+  # ORIGINAL DOCUMENT TYPES (Mortgage/Financial)
+  # ============================================================================
+
+  ClassifyPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to classify documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_CLASSIFY
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.5
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+                - Name: classes
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_classify_prompt.txt
+          TemplateType: TEXT
+
+  ClassifyPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [ClassifyPrompt, Arn]
+
+  ClassifyFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_classify_flow.json
+      DefinitionSubstitutions:
+        ClassifyPromptArn:
+          Fn::GetAtt: [ClassifyPromptVersion1, Arn]
+      Description: Prompt flow to classify mortgage application documents
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_CLASSIFY
+
+  ClassifyFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [ClassifyFlow, Arn]
+
+  ClassifyFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [ClassifyFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [ClassifyFlowVersion1, Version]
+
+  BankStatementPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to process bank_statement documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_BANKSTMT
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.5
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_bank_statement_to_json_prompt.txt
+          TemplateType: TEXT
+
+  BankStatementPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [BankStatementPrompt, Arn]
+
+  BankStatementFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_bank_statement_flow.json
+      DefinitionSubstitutions:
+        BankStatementToJsonPromptArn:
+          Fn::GetAtt: [BankStatementPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Class for bank statements. Should contain statement begin and end dates, beginning balance, ending balance, transaction list, customer name
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_BANKSTMT
+
+  BankStatementFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [BankStatementFlow, Arn]
+
+  BankStatementFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [BankStatementFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [BankStatementFlowVersion1, Version]
+
+
+  DriversLicensePrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to process drivers_license documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_DRIVERS_LIC
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.5
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_drivers_license_to_json_prompt.txt
+          TemplateType: TEXT
+
+  DriversLicensePromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [DriversLicensePrompt, Arn]
+
+  DriversLicenseCheckPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to check drivers_license documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_DRIVERS_LIC_CHECK
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.5
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_drivers_license_check_prompt.txt
+          TemplateType: TEXT
+
+  DriversLicenseCheckPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [DriversLicenseCheckPrompt, Arn]
+
+  DriversLicenseFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_drivers_license_flow.json
+      DefinitionSubstitutions:
+        DriversLicenseToJsonPromptArn:
+          Fn::GetAtt: [DriversLicensePromptVersion1, Arn]
+        DriversLicenseCheckPromptArn:
+          Fn::GetAtt: [DriversLicenseCheckPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Class for drivers license. Should contain date of birth or DOB, expiration date, drivers licence number or DL
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_DRIVERS_LIC
+
+  DriversLicenseFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [DriversLicenseFlow, Arn]
+
+  DriversLicenseFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [DriversLicenseFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [DriversLicenseFlowVersion1, Version]
+
+  URLAAnalyzePrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to process urla_1003 documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_URLA1003_ANALYZE
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.5
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_urla_1003_analyze_prompt.txt
+          TemplateType: TEXT
+
+  URLAAnalyzePromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [URLAAnalyzePrompt, Arn]
+
+  URLAToJsonPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to process urla_1003 documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_URLA1003_TOJSON
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.5
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_urla_1003_to_json_prompt.txt
+          TemplateType: TEXT
+
+  URLAToJsonPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [URLAToJsonPrompt, Arn]
+
+  URLA1003Flow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_urla_1003_flow.json
+      DefinitionSubstitutions:
+        URLAAnalyzePromptArn:
+          Fn::GetAtt: [URLAAnalyzePromptVersion1, Arn]
+        URLAToJsonPromptArn:
+          Fn::GetAtt: [URLAToJsonPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Class for form URLA 1003. Document title is Uniform Residential Loan Application
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_URLA1003
+
+  URLA1003FlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [URLA1003Flow, Arn]
+
+  URLA1003FlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [URLA1003Flow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [URLA1003FlowVersion1, Version]
+
+  ForReviewPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to process for_review documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_FORREVIEW
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.5
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_for_review_prompt.txt
+          TemplateType: TEXT
+
+  ForReviewPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [ForReviewPrompt, Arn]
+
+  ForReviewFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_for_review_flow.json
+      DefinitionSubstitutions:
+        ForReviewPromptArn:
+          Fn::GetAtt: [ForReviewPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Use this class for pages that don't match other classes. Do not group pages together
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_FORREVIEW
+
+  ForReviewFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [ForReviewFlow, Arn]
+
+  ForReviewFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [ForReviewFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [ForReviewFlowVersion1, Version]
+
+  # ============================================================================
+  # NY PERSONAL INJURY DOCUMENT TYPES
+  # ============================================================================
+
+  # --- PI Classification Prompt (Alternative classifier for PI documents) ---
+  PIClassifyPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to classify NY Personal Injury documents
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_PI_CLASSIFY
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 2000
+              Temperature: 0.3
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+                - Name: classes
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_pi_classify_prompt.txt
+          TemplateType: TEXT
+
+  PIClassifyPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [PIClassifyPrompt, Arn]
+
+  PIClassifyFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_classify_flow.json
+      DefinitionSubstitutions:
+        ClassifyPromptArn:
+          Fn::GetAtt: [PIClassifyPromptVersion1, Arn]
+      Description: Prompt flow to classify NY Personal Injury documents
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_PI_CLASSIFY
+
+  PIClassifyFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [PIClassifyFlow, Arn]
+
+  PIClassifyFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [PIClassifyFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [PIClassifyFlowVersion1, Version]
+
+  # --- Medical Records ---
+  MedicalRecordsPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to extract data from medical records for NY PI cases
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_MEDICAL_RECORDS
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 4000
+              Temperature: 0.2
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_medical_records_to_json_prompt.txt
+          TemplateType: TEXT
+
+  MedicalRecordsPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [MedicalRecordsPrompt, Arn]
+
+  MedicalRecordsFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_medical_records_flow.json
+      DefinitionSubstitutions:
+        MedicalRecordsToJsonPromptArn:
+          Fn::GetAtt: [MedicalRecordsPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Extract medical records data including diagnoses, ICD codes, treatments, and NY serious injury threshold indicators
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_MEDICAL_RECORDS
+
+  MedicalRecordsFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [MedicalRecordsFlow, Arn]
+
+  MedicalRecordsFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [MedicalRecordsFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [MedicalRecordsFlowVersion1, Version]
+
+  # --- Police/Accident Reports ---
+  PoliceReportPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to extract data from police and accident reports for NY PI cases
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_POLICE_REPORT
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 4000
+              Temperature: 0.2
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_police_report_to_json_prompt.txt
+          TemplateType: TEXT
+
+  PoliceReportPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [PoliceReportPrompt, Arn]
+
+  PoliceReportFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_police_report_flow.json
+      DefinitionSubstitutions:
+        PoliceReportToJsonPromptArn:
+          Fn::GetAtt: [PoliceReportPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Extract NYPD accident reports and MV-104 forms with fault indicators and VTL violations
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_POLICE_REPORT
+
+  PoliceReportFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [PoliceReportFlow, Arn]
+
+  PoliceReportFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [PoliceReportFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [PoliceReportFlowVersion1, Version]
+
+  # --- Insurance Policies ---
+  InsurancePolicyPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to extract coverage data from insurance policies for NY PI cases
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_INSURANCE_POLICY
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 4000
+              Temperature: 0.2
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_insurance_policy_to_json_prompt.txt
+          TemplateType: TEXT
+
+  InsurancePolicyPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [InsurancePolicyPrompt, Arn]
+
+  InsurancePolicyFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_insurance_policy_flow.json
+      DefinitionSubstitutions:
+        InsurancePolicyToJsonPromptArn:
+          Fn::GetAtt: [InsurancePolicyPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Extract insurance coverage limits including NY SUM/UM, No-Fault PIP, and liability analysis
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_INSURANCE_POLICY
+
+  InsurancePolicyFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [InsurancePolicyFlow, Arn]
+
+  InsurancePolicyFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [InsurancePolicyFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [InsurancePolicyFlowVersion1, Version]
+
+  # --- Medical Bills ---
+  MedicalBillsPrompt:
+    Type: AWS::Bedrock::Prompt
+    Properties:
+      Description: Prompt to extract billing data from medical bills for NY PI cases
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_MEDICAL_BILLS
+      Variants:
+        - Name: Version1
+          InferenceConfiguration:
+            Text:
+              MaxTokens: 4000
+              Temperature: 0.2
+              TopP: 0.99
+          ModelId:
+            Ref: BedrockPromptModelId
+          TemplateConfiguration:
+            Text:
+              InputVariables:
+                - Name: doc_text
+              TextS3Location:
+                Bucket:
+                  Ref: PromptFlowsBucket
+                Key:
+                  Fn::Sub: ${PromptFlowsKeyPath}/prompts/idp_medical_bills_to_json_prompt.txt
+          TemplateType: TEXT
+
+  MedicalBillsPromptVersion1:
+    Type: AWS::Bedrock::PromptVersion
+    Properties:
+      PromptArn:
+        Fn::GetAtt: [MedicalBillsPrompt, Arn]
+
+  MedicalBillsFlow:
+    Type: AWS::Bedrock::Flow
+    Properties:
+      DefinitionS3Location:
+        Bucket:
+          Ref: PromptFlowsBucket
+        Key:
+          Fn::Sub: ${PromptFlowsKeyPath}/flows/idp_medical_bills_flow.json
+      DefinitionSubstitutions:
+        MedicalBillsToJsonPromptArn:
+          Fn::GetAtt: [MedicalBillsPromptVersion1, Arn]
+        DestinationBucket:
+          Ref: DestinationS3Bucket
+      Description: Extract medical billing data including CPT codes, charges, payments, and lien information for special damages
+      ExecutionRoleArn:
+        Fn::GetAtt: [IDPPromptFlowRole, Arn]
+      Name:
+        Fn::Sub: ${AWS::StackName}-IDP_MEDICAL_BILLS
+
+  MedicalBillsFlowVersion1:
+    Type: AWS::Bedrock::FlowVersion
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [MedicalBillsFlow, Arn]
+
+  MedicalBillsFlowAlias:
+    Type: AWS::Bedrock::FlowAlias
+    Properties:
+      FlowArn:
+        Fn::GetAtt: [MedicalBillsFlow, Arn]
+      Name: latest
+      RoutingConfiguration:
+        - FlowVersion:
+            Fn::GetAtt: [MedicalBillsFlowVersion1, Version]
+
+  # ============================================================================
+  # IAM POLICIES
+  # ============================================================================
+
+  BedrockFlowPolicy:
+    Type: 'AWS::IAM::RolePolicy'
+    Properties:
+      PolicyName: BedrockFlowPolicy
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - 'bedrock:GetFlow'
+            Resource:
+              # Original flows
+              - Fn::GetAtt: [ClassifyFlow, Arn]
+              - Fn::GetAtt: [BankStatementFlow, Arn]
+              - Fn::GetAtt: [DriversLicenseFlow, Arn]
+              - Fn::GetAtt: [URLA1003Flow, Arn]
+              - Fn::GetAtt: [ForReviewFlow, Arn]
+              # NY Personal Injury flows
+              - Fn::GetAtt: [PIClassifyFlow, Arn]
+              - Fn::GetAtt: [MedicalRecordsFlow, Arn]
+              - Fn::GetAtt: [PoliceReportFlow, Arn]
+              - Fn::GetAtt: [InsurancePolicyFlow, Arn]
+              - Fn::GetAtt: [MedicalBillsFlow, Arn]
+      RoleName:
+        Ref: IDPPromptFlowRole
+
+  # ============================================================================
+  # CLOUDFORMATION OUTPUTS FOR PI DOCUMENT TYPES
+  # ============================================================================
+
+  PIClassifyFlowId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [PIClassifyFlow, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-PIClassifyFlowId
+
+  PIClassifyFlowAliasId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [PIClassifyFlowAlias, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-PIClassifyFlowAliasId
+
+  MedicalRecordsFlowId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [MedicalRecordsFlow, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-MedicalRecordsFlowId
+
+  MedicalRecordsFlowAliasId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [MedicalRecordsFlowAlias, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-MedicalRecordsFlowAliasId
+
+  PoliceReportFlowId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [PoliceReportFlow, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-PoliceReportFlowId
+
+  PoliceReportFlowAliasId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [PoliceReportFlowAlias, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-PoliceReportFlowAliasId
+
+  InsurancePolicyFlowId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [InsurancePolicyFlow, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-InsurancePolicyFlowId
+
+  InsurancePolicyFlowAliasId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [InsurancePolicyFlowAlias, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-InsurancePolicyFlowAliasId
+
+  MedicalBillsFlowId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [MedicalBillsFlow, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-MedicalBillsFlowId
+
+  MedicalBillsFlowAliasId:
+    Type: AWS::CloudFormation::Output
+    Value:
+      Fn::GetAtt: [MedicalBillsFlowAlias, Id]
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-MedicalBillsFlowAliasId

@@ -1,0 +1,226 @@
+{
+  "billing_provider": {
+    "name": "NYC Health + Hospitals/Bellevue",
+    "address": "462 First Avenue, New York, NY 10016",
+    "phone": "(212) 562-4141",
+    "fax": "(212) 562-4150",
+    "tax_id": "13-3893536",
+    "npi": "1003819692",
+    "provider_type": "Hospital"
+  },
+  "patient_info": {
+    "name": "Maria Santos",
+    "date_of_birth": "07/22/1985",
+    "account_number": "ACC-2024-031524-001",
+    "medical_record_number": "BEL-2024-789456"
+  },
+  "billing_summary": {
+    "statement_date": "03/30/2024",
+    "billing_period": {
+      "start": "03/15/2024",
+      "end": "03/15/2024"
+    },
+    "total_charges": 8745.00,
+    "total_payments": 6500.00,
+    "total_adjustments": 745.00,
+    "balance_due": 1500.00,
+    "amount_in_collections": 0
+  },
+  "line_items": [
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "99284",
+      "hcpcs_code": "",
+      "revenue_code": "0450",
+      "description": "Emergency Dept Visit - Level 4",
+      "quantity": 1,
+      "unit_charge": 1850.00,
+      "total_charge": 1850.00,
+      "diagnosis_pointer": "A,B,C,D",
+      "modifier": "",
+      "place_of_service": "23"
+    },
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "72040",
+      "hcpcs_code": "",
+      "revenue_code": "0320",
+      "description": "X-Ray Cervical Spine 2-3 Views",
+      "quantity": 1,
+      "unit_charge": 425.00,
+      "total_charge": 425.00,
+      "diagnosis_pointer": "A",
+      "modifier": "",
+      "place_of_service": "23"
+    },
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "72100",
+      "hcpcs_code": "",
+      "revenue_code": "0320",
+      "description": "X-Ray Lumbar Spine 2-3 Views",
+      "quantity": 1,
+      "unit_charge": 475.00,
+      "total_charge": 475.00,
+      "diagnosis_pointer": "B",
+      "modifier": "",
+      "place_of_service": "23"
+    },
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "J1885",
+      "revenue_code": "0250",
+      "description": "Toradol 30mg IV Injection",
+      "quantity": 1,
+      "unit_charge": 125.00,
+      "total_charge": 125.00,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "23"
+    },
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "",
+      "revenue_code": "0250",
+      "description": "Pharmacy - Cyclobenzaprine 10mg",
+      "quantity": 21,
+      "unit_charge": 2.50,
+      "total_charge": 52.50,
+      "diagnosis_pointer": "A,B",
+      "modifier": "",
+      "place_of_service": "23"
+    },
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "L0172",
+      "revenue_code": "0274",
+      "description": "Cervical Collar - Soft",
+      "quantity": 1,
+      "unit_charge": 185.00,
+      "total_charge": 185.00,
+      "diagnosis_pointer": "A",
+      "modifier": "",
+      "place_of_service": "23"
+    },
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "",
+      "revenue_code": "0762",
+      "description": "EMS Ambulance Transport - ALS",
+      "quantity": 1,
+      "unit_charge": 1850.00,
+      "total_charge": 1850.00,
+      "diagnosis_pointer": "A,B,C,D",
+      "modifier": "",
+      "place_of_service": "41"
+    },
+    {
+      "date_of_service": "03/15/2024",
+      "cpt_code": "",
+      "hcpcs_code": "",
+      "revenue_code": "0001",
+      "description": "Facility Fee",
+      "quantity": 1,
+      "unit_charge": 3782.50,
+      "total_charge": 3782.50,
+      "diagnosis_pointer": "A,B,C,D",
+      "modifier": "",
+      "place_of_service": "23"
+    }
+  ],
+  "diagnoses": [
+    {
+      "code": "S13.4XXA",
+      "description": "Cervical sprain/strain, initial encounter",
+      "pointer": "A"
+    },
+    {
+      "code": "S33.5XXA",
+      "description": "Lumbar sprain/strain, initial encounter",
+      "pointer": "B"
+    },
+    {
+      "code": "S40.012A",
+      "description": "Contusion of left shoulder, initial encounter",
+      "pointer": "C"
+    },
+    {
+      "code": "G44.329",
+      "description": "Post-traumatic headache, unspecified, not intractable",
+      "pointer": "D"
+    }
+  ],
+  "payments_received": [
+    {
+      "date": "04/15/2024",
+      "payer": "State Farm No-Fault",
+      "amount": 6500.00,
+      "check_number": "EFT-7845621",
+      "payment_type": "No-Fault"
+    }
+  ],
+  "adjustments": [
+    {
+      "date": "04/15/2024",
+      "type": "Contractual",
+      "amount": 745.00,
+      "reason": "No-Fault fee schedule adjustment"
+    }
+  ],
+  "insurance_info": {
+    "primary_insurance": {
+      "name": "State Farm Insurance",
+      "policy_number": "SF-98765432",
+      "group_number": "",
+      "claim_number": "24-C7-8521-A"
+    },
+    "no_fault_carrier": {
+      "name": "State Farm Insurance",
+      "claim_number": "24-NF-8521",
+      "adjuster": "Patricia Hernandez"
+    }
+  },
+  "accident_related": {
+    "date_of_accident": "03/15/2024",
+    "accident_type": "Motor Vehicle Accident",
+    "is_workers_comp": false,
+    "is_no_fault": true,
+    "is_third_party_liability": true
+  },
+  "lien_info": {
+    "lien_filed": true,
+    "lien_amount": 1500.00,
+    "lien_holder": "NYC Health + Hospitals",
+    "erisa_plan": false,
+    "medicare_conditional_payment": false,
+    "medicaid_lien": false
+  },
+  "collection_status": {
+    "in_collections": false,
+    "collection_agency": "",
+    "collection_date": ""
+  },
+  "treatment_summary": {
+    "emergency_room_charges": 5632.50,
+    "inpatient_charges": 0,
+    "outpatient_charges": 0,
+    "surgery_charges": 0,
+    "radiology_charges": 900.00,
+    "physical_therapy_charges": 0,
+    "medication_charges": 177.50,
+    "dme_charges": 185.00,
+    "ambulance_charges": 1850.00,
+    "other_charges": 0
+  },
+  "special_damages_calculation": {
+    "total_medical_specials": 8745.00,
+    "no_fault_exhausted": false,
+    "health_insurance_paid": 0,
+    "out_of_pocket": 0,
+    "outstanding_balance": 1500.00
+  }
+}

@@ -1,0 +1,138 @@
+Analyze the provided medical records from a New York Personal Injury case:
+
+<medical_records>
+{{doc_text}}
+</medical_records>
+
+Extract all relevant information and return a structured JSON object. For NY serious injury threshold analysis, pay special attention to:
+- Permanent consequential limitation
+- Significant limitation of use
+- Permanent loss of use
+- 90/180 day rule (inability to perform usual activities for 90 of first 180 days)
+
+{
+  "document_info": {
+    "facility_name": "",
+    "facility_address": "",
+    "facility_phone": "",
+    "record_type": "",  // "Emergency Room", "Inpatient", "Outpatient", "Physician Office", "Surgical", "Rehabilitation"
+    "date_of_service": "",
+    "date_range": {
+      "start": "",
+      "end": ""
+    }
+  },
+  "patient_info": {
+    "name": "",
+    "date_of_birth": "",
+    "age_at_visit": 0,
+    "medical_record_number": "",
+    "account_number": ""
+  },
+  "accident_info": {
+    "date_of_accident": "",
+    "mechanism_of_injury": "",  // "Motor Vehicle Accident", "Slip and Fall", "Construction Accident", "Pedestrian Knockdown", etc.
+    "accident_description": ""
+  },
+  "chief_complaint": "",
+  "history_of_present_illness": "",
+  "diagnoses": [
+    {
+      "description": "",
+      "icd_code": "",
+      "body_part": "",
+      "laterality": "",  // "Left", "Right", "Bilateral", "N/A"
+      "is_primary": false
+    }
+  ],
+  "injuries": [
+    {
+      "body_part": "",
+      "injury_type": "",
+      "severity": "",
+      "description": ""
+    }
+  ],
+  "imaging_findings": [
+    {
+      "study_type": "",  // "X-Ray", "MRI", "CT", "Ultrasound"
+      "body_part": "",
+      "date": "",
+      "findings": "",
+      "impression": ""
+    }
+  ],
+  "treatment_provided": [
+    {
+      "type": "",  // "Medication", "Procedure", "Physical Therapy", "Surgery", "Injection"
+      "description": "",
+      "date": "",
+      "provider": ""
+    }
+  ],
+  "medications_prescribed": [
+    {
+      "name": "",
+      "dosage": "",
+      "frequency": "",
+      "purpose": ""
+    }
+  ],
+  "physical_examination": {
+    "vitals": {
+      "blood_pressure": "",
+      "pulse": "",
+      "temperature": ""
+    },
+    "findings": []
+  },
+  "functional_limitations": {
+    "range_of_motion": [
+      {
+        "body_part": "",
+        "normal_range": "",
+        "measured_range": "",
+        "percent_loss": 0
+      }
+    ],
+    "work_restrictions": [],
+    "activity_restrictions": [],
+    "disability_duration": ""
+  },
+  "referrals": [
+    {
+      "specialty": "",
+      "reason": "",
+      "date": ""
+    }
+  ],
+  "follow_up": {
+    "recommended": "",
+    "date": "",
+    "instructions": ""
+  },
+  "prognosis": "",
+  "causation_statement": "",  // Any statement linking injuries to accident
+  "ny_serious_injury_indicators": {
+    "permanent_consequential_limitation": false,
+    "significant_limitation_of_use": false,
+    "permanent_loss_of_use": false,
+    "fracture": false,
+    "dismemberment": false,
+    "significant_disfigurement": false,
+    "loss_of_fetus": false,
+    "ninety_one_eighty_disability": false,
+    "supporting_language": []
+  },
+  "provider_info": {
+    "name": "",
+    "credentials": "",
+    "specialty": "",
+    "npi": ""
+  }
+}
+
+Ensure all dates are in MM/DD/YYYY format.
+Extract ICD-10 codes when present.
+Flag any language supporting NY Insurance Law 5102(d) serious injury categories.
+Return only valid JSON with no additional commentary.

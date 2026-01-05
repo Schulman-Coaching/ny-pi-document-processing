@@ -1,0 +1,315 @@
+{
+  "case_id": "output",
+  "generated_date": "2026-01-05 23:20:16",
+  "plaintiff": {
+    "name": "Maria Santos",
+    "date_of_birth": "07/22/1985",
+    "age_at_accident": 38,
+    "address": "425 East 58th Street, Apt 12B, New York, NY 10022",
+    "phone": "(917) 555-1234"
+  },
+  "defendant": {
+    "driver_name": "Robert Thompson",
+    "driver_address": "2847 Valentine Avenue, Bronx, NY 10458",
+    "driver_phone": "(718) 555-9876",
+    "employer": "Johnson Delivery Services LLC",
+    "employer_address": "1500 Broadway, New York, NY 10036",
+    "vehicle": {
+      "year": "2019",
+      "make": "Ford",
+      "model": "F-150",
+      "plate": "ABC-7890"
+    },
+    "insurance": {
+      "company": "Progressive Commercial Lines Insurance Company",
+      "policy_number": "PC-55512345",
+      "claim_number": "24-COM-7845621",
+      "bi_limits": {
+        "per_person": 250000,
+        "per_accident": 500000
+      }
+    }
+  },
+  "accident": {
+    "date": "03/15/2024",
+    "time": "14:35",
+    "location": "Third Avenue at East 42nd Street at East 42nd Street",
+    "borough": "Manhattan",
+    "weather": "Clear",
+    "road_conditions": "Dry",
+    "description": "On Friday, March 15, 2024, at approximately 1435 hours, I, PO Rodriguez, responded to the scene of a motor vehicle accident at Third Avenue and East 42nd Street. Upon arrival, I observed two vehicles in the northbound lane of Third Avenue. Vehicle 1, a blue 2021 Honda Accord operated by Maria Santos, was stopped at a red traffic signal facing northbound. Vehicle 2, a white 2019 Ford F-150 operated by Robert Thompson and owned by Johnson Delivery Services LLC, was traveling northbound behind Vehicle 1. Vehicle 2 failed to stop and struck the rear of Vehicle 1. Driver Thompson stated he did not see Vehicle 1 stopped. Two independent witnesses stated they observed Vehicle 2 strike Vehicle 1 without braking, and one witness stated the driver appeared to be looking down. EMS Unit 45 responded and transported Driver Santos to Bellevue Hospital for treatment of neck and back pain. Driver Thompson was issued a summons for VTL 1129(a) - Following Too Closely.",
+    "police_report_number": "2024-17-003521",
+    "precinct": "17th Precinct"
+  },
+  "injuries": {
+    "primary_diagnoses": [
+      {
+        "description": "Cervical disc herniation C5-C6",
+        "icd_code": "M50.122",
+        "body_part": "Cervical spine",
+        "is_primary": true
+      },
+      {
+        "description": "Cervical sprain/strain",
+        "icd_code": "S13.4XXA",
+        "body_part": "Cervical spine",
+        "is_primary": true
+      }
+    ],
+    "all_diagnoses": [
+      {
+        "description": "Cervical disc herniation C5-C6",
+        "icd_code": "M50.122",
+        "body_part": "Cervical spine",
+        "is_primary": true
+      },
+      {
+        "description": "Cervical radiculopathy C6-C7",
+        "icd_code": "M54.12",
+        "body_part": "Cervical spine",
+        "is_primary": false
+      },
+      {
+        "description": "Lumbar disc bulge L4-L5",
+        "icd_code": "M51.26",
+        "body_part": "Lumbar spine",
+        "is_primary": false
+      },
+      {
+        "description": "Left lumbar radiculopathy",
+        "icd_code": "M54.16",
+        "body_part": "Lumbar spine",
+        "is_primary": false
+      },
+      {
+        "description": "Cervical sprain/strain",
+        "icd_code": "S13.4XXA",
+        "body_part": "Cervical spine",
+        "is_primary": true
+      },
+      {
+        "description": "Lumbar sprain/strain",
+        "icd_code": "S33.5XXA",
+        "body_part": "Lumbar spine",
+        "is_primary": false
+      },
+      {
+        "description": "Left shoulder contusion",
+        "icd_code": "S40.012A",
+        "body_part": "Shoulder",
+        "is_primary": false
+      },
+      {
+        "description": "Post-traumatic headache",
+        "icd_code": "G44.329",
+        "body_part": "Head",
+        "is_primary": false
+      }
+    ],
+    "icd_codes": [
+      "S13.4XXA",
+      "S33.5XXA",
+      "G44.329",
+      "M54.12",
+      "S40.012A",
+      "M50.122",
+      "M54.16",
+      "M51.26"
+    ],
+    "body_parts_affected": [
+      "Lumbar spine",
+      "Shoulder",
+      "Head",
+      "Cervical spine"
+    ],
+    "injury_summary": "Primary injuries: Cervical disc herniation C5-C6; Cervical sprain/strain"
+  },
+  "treatment_timeline": [
+    {
+      "date": "03/15/2024",
+      "provider": "NYC Health + Hospitals/Bellevue",
+      "type": "Emergency Room",
+      "chief_complaint": "Neck pain, lower back pain, headache following motor vehicle accident",
+      "treatments": [
+        "Toradol 30mg IV",
+        "Flexeril 10mg PO",
+        "Cervical collar applied"
+      ],
+      "referrals": [
+        "Orthopedic Surgery",
+        "Physical Therapy",
+        "Neurology"
+      ]
+    },
+    {
+      "date": "04/15/2024",
+      "provider": "Manhattan Spine & Pain Medicine",
+      "type": "Outpatient",
+      "chief_complaint": "Persistent neck and back pain, left arm numbness and tingling",
+      "treatments": [
+        "C5-C6 transforaminal epidural steroid injection under fluoroscopic guidance"
+      ],
+      "referrals": [
+        "Neurosurgery"
+      ]
+    }
+  ],
+  "medical_providers": [
+    {
+      "name": "Manhattan Spine & Pain Medicine",
+      "address": "635 Madison Avenue, Suite 1400, New York, NY 10022",
+      "phone": "(212) 555-7890",
+      "type": "Outpatient",
+      "treating_physician": "Robert Kim, MD"
+    },
+    {
+      "name": "NYC Health + Hospitals/Bellevue",
+      "address": "462 First Avenue, New York, NY 10016",
+      "phone": "(212) 562-4141",
+      "type": "Emergency Room",
+      "treating_physician": "James Chen, MD"
+    },
+    {
+      "name": "ActiveCare Physical Therapy",
+      "address": "220 East 42nd Street, Suite 500, New York, NY 10017",
+      "phone": "(212) 555-3456",
+      "type": "Physical Therapy",
+      "npi": "1357924680"
+    }
+  ],
+  "special_damages": {
+    "total_medical_charges": 27995.0,
+    "total_paid_by_no_fault": 20050.0,
+    "total_paid_by_health_insurance": 0,
+    "total_adjustments": 2595.0,
+    "total_outstanding_balance": 5350.0,
+    "total_liens": 5350.0,
+    "no_fault_exhausted": false,
+    "no_fault_remaining": 29950.0,
+    "breakdown_by_provider": [
+      {
+        "provider": "Manhattan Spine & Pain Medicine",
+        "total_charges": 12850.0,
+        "balance_due": 2850.0,
+        "lien_amount": 2850.0
+      },
+      {
+        "provider": "NYC Health + Hospitals/Bellevue",
+        "total_charges": 8745.0,
+        "balance_due": 1500.0,
+        "lien_amount": 1500.0
+      },
+      {
+        "provider": "ActiveCare Physical Therapy",
+        "total_charges": 6400.0,
+        "balance_due": 1000.0,
+        "lien_amount": 1000.0
+      }
+    ],
+    "breakdown_by_category": {
+      "Outpatient": 650.0,
+      "Surgery": 5775.0,
+      "Radiology": 5700.0,
+      "Other": 1625.0,
+      "Emergency Room": 5632.5,
+      "Medication": 177.5,
+      "Dme": 185.0,
+      "Ambulance": 1850.0,
+      "Physical Therapy": 6400.0
+    }
+  },
+  "insurance_coverage": {
+    "plaintiff_coverage": {
+      "company": "State Farm Mutual Automobile Insurance Company",
+      "policy_number": "SF-98765432",
+      "no_fault_pip": 50000,
+      "obel": 25000,
+      "sum_per_person": 100000,
+      "sum_per_accident": 300000
+    },
+    "defendant_coverage": {
+      "company": "Progressive Commercial Lines Insurance Company",
+      "policy_number": "PC-55512345",
+      "bi_per_person": 250000,
+      "bi_per_accident": 500000
+    },
+    "total_available_coverage": 350000,
+    "coverage_analysis": "Defendant's BI limits ($250,000) exceed plaintiff's SUM. No SUM claim available."
+  },
+  "liability_analysis": {
+    "fault_determination": "Driver 2",
+    "contributing_factors": [
+      "Driver inattention (V2)",
+      "Following too closely (V2)",
+      "Possible cell phone use (V2)"
+    ],
+    "violations_cited": [
+      {
+        "vtl_section": "VTL 1129(a)",
+        "description": "Following Too Closely",
+        "driver_number": 2
+      }
+    ],
+    "witness_statements": [
+      {
+        "name": "David Chen",
+        "summary": "Witness was standing on corner waiting to cross. Observed Vehicle 1 (blue Honda) stopped at red light. Vehicle 2 (white pickup) came up behind and struck Vehicle 1 without braking. Stated driver of Vehicle 2 appeared to be looking down, possibly at phone."
+      },
+      {
+        "name": "Jennifer Walsh",
+        "summary": "Witness was in vehicle behind Vehicle 2. Observed Vehicle 2 strike Vehicle 1 without stopping. Did not see Vehicle 2 brake lights illuminate before impact."
+      }
+    ],
+    "liability_assessment": "Strong liability case. Defendant cited for: Following Too Closely. 2 independent witness(es) support plaintiff's version.",
+    "comparative_fault_risk": "Low"
+  },
+  "ny_serious_injury_analysis": {
+    "meets_threshold": true,
+    "categories_met": [
+      "Permanent Consequential Limitation",
+      "90/180 Day Disability",
+      "Significant Limitation of Use"
+    ],
+    "supporting_evidence": [
+      "MRI-confirmed C5-C6 disc herniation with radiculopathy",
+      "EMG-confirmed nerve damage (active denervation)",
+      "56-67% loss of cervical ROM persisting beyond 30 days",
+      "50% loss of lumbar flexion",
+      "Prognosis: permanent limitation anticipated",
+      "Unable to work since accident (now 30+ days)",
+      "May require surgical intervention",
+      "Decreased ROM in all planes of cervical spine (44-56% loss)",
+      "42% loss of lumbar flexion",
+      "Work restrictions preventing return to employment",
+      "Disability duration initially 2 weeks with likely extension"
+    ],
+    "strength_assessment": "Strong - Permanent limitation documented",
+    "risk_factors": []
+  },
+  "case_value_factors": {
+    "positive_factors": [
+      "Clear liability - defendant 100% at fault",
+      "Traffic violations cited against defendant",
+      "Multiple independent witnesses",
+      "Permanent injury documented",
+      "MRI-confirmed disc herniation"
+    ],
+    "negative_factors": [],
+    "value_multipliers": [
+      "Permanent injury multiplier: 3-5x specials",
+      "Disc herniation multiplier: 2-4x specials"
+    ],
+    "special_damages_total": 27995.0,
+    "estimated_value_range": {
+      "low": 55990.0,
+      "mid": 97982.5,
+      "high": 139975.0
+    }
+  },
+  "recommended_actions": [
+    "Send policy limits demand to defendant's carrier ($250,000 available)",
+    "Request updated records from all treating providers",
+    "Obtain final bills with No-Fault payments and balances due",
+    "Negotiate medical liens totaling $5,350.00"
+  ]
+}

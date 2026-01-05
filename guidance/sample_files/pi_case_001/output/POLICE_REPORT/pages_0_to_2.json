@@ -1,0 +1,186 @@
+{
+  "report_info": {
+    "report_number": "2024-17-003521",
+    "precinct": "17th Precinct",
+    "report_type": "MV-104",
+    "date_prepared": "03/15/2024",
+    "officer_name": "Michael Rodriguez",
+    "officer_badge_number": "8842",
+    "officer_command": "17th Precinct, Patrol Borough Manhattan South"
+  },
+  "accident_details": {
+    "date": "03/15/2024",
+    "time": "14:35",
+    "day_of_week": "Friday",
+    "location": {
+      "street_address": "Third Avenue at East 42nd Street",
+      "cross_street": "East 42nd Street",
+      "borough": "Manhattan",
+      "county": "New York",
+      "intersection": true,
+      "highway_name": "",
+      "mile_marker": ""
+    },
+    "weather_conditions": "Clear",
+    "road_conditions": "Dry",
+    "lighting_conditions": "Daylight",
+    "traffic_control": "Traffic Light"
+  },
+  "vehicles": [
+    {
+      "vehicle_number": 1,
+      "year": "2021",
+      "make": "Honda",
+      "model": "Accord",
+      "color": "Blue",
+      "license_plate": "JKL-4521",
+      "state": "NY",
+      "vin": "1HGCV1F34MA123456",
+      "registered_owner": {
+        "name": "Maria Santos",
+        "address": "425 East 58th Street, Apt 12B, New York, NY 10022"
+      },
+      "insurance": {
+        "company": "State Farm Insurance",
+        "policy_number": "SF-98765432"
+      },
+      "damage_description": "Moderate rear-end damage to bumper, trunk, and rear quarter panels. Rear lights broken. Estimated $8,500 damage.",
+      "towed": false,
+      "tow_company": "",
+      "direction_of_travel": "Northbound on Third Avenue",
+      "estimated_speed": "0 MPH (stopped)"
+    },
+    {
+      "vehicle_number": 2,
+      "year": "2019",
+      "make": "Ford",
+      "model": "F-150",
+      "color": "White",
+      "license_plate": "ABC-7890",
+      "state": "NY",
+      "vin": "1FTEW1EP5KFA98765",
+      "registered_owner": {
+        "name": "Johnson Delivery Services LLC",
+        "address": "1500 Broadway, New York, NY 10036"
+      },
+      "insurance": {
+        "company": "Progressive Commercial",
+        "policy_number": "PC-55512345"
+      },
+      "damage_description": "Front bumper damage, hood dented, grille broken. Estimated $6,200 damage.",
+      "towed": false,
+      "tow_company": "",
+      "direction_of_travel": "Northbound on Third Avenue",
+      "estimated_speed": "Approximately 25-30 MPH at impact"
+    }
+  ],
+  "drivers": [
+    {
+      "vehicle_number": 1,
+      "name": "Maria Santos",
+      "date_of_birth": "07/22/1985",
+      "address": "425 East 58th Street, Apt 12B, New York, NY 10022",
+      "license_number": "S123-4567-8901",
+      "license_state": "NY",
+      "license_class": "D",
+      "phone": "(917) 555-1234",
+      "injuries_reported": "Neck pain, back pain, headache",
+      "hospital_transported_to": "Bellevue Hospital",
+      "seatbelt_used": true,
+      "airbag_deployed": true,
+      "alcohol_suspected": false,
+      "drug_suspected": false,
+      "summons_issued": false,
+      "summons_details": []
+    },
+    {
+      "vehicle_number": 2,
+      "name": "Robert Thompson",
+      "date_of_birth": "11/03/1992",
+      "address": "2847 Valentine Avenue, Bronx, NY 10458",
+      "license_number": "T987-6543-2100",
+      "license_state": "NY",
+      "license_class": "D",
+      "phone": "(718) 555-9876",
+      "injuries_reported": "None",
+      "hospital_transported_to": "",
+      "seatbelt_used": true,
+      "airbag_deployed": false,
+      "alcohol_suspected": false,
+      "drug_suspected": false,
+      "summons_issued": true,
+      "summons_details": [
+        "VTL 1129(a) - Following Too Closely"
+      ]
+    }
+  ],
+  "passengers": [],
+  "pedestrians": [],
+  "cyclists": [],
+  "witnesses": [
+    {
+      "name": "David Chen",
+      "address": "301 East 42nd Street, New York, NY 10017",
+      "phone": "(212) 555-4567",
+      "statement_summary": "Witness was standing on corner waiting to cross. Observed Vehicle 1 (blue Honda) stopped at red light. Vehicle 2 (white pickup) came up behind and struck Vehicle 1 without braking. Stated driver of Vehicle 2 appeared to be looking down, possibly at phone."
+    },
+    {
+      "name": "Jennifer Walsh",
+      "address": "245 East 44th Street, New York, NY 10017",
+      "phone": "(646) 555-7890",
+      "statement_summary": "Witness was in vehicle behind Vehicle 2. Observed Vehicle 2 strike Vehicle 1 without stopping. Did not see Vehicle 2 brake lights illuminate before impact."
+    }
+  ],
+  "narrative": "On Friday, March 15, 2024, at approximately 1435 hours, I, PO Rodriguez, responded to the scene of a motor vehicle accident at Third Avenue and East 42nd Street. Upon arrival, I observed two vehicles in the northbound lane of Third Avenue. Vehicle 1, a blue 2021 Honda Accord operated by Maria Santos, was stopped at a red traffic signal facing northbound. Vehicle 2, a white 2019 Ford F-150 operated by Robert Thompson and owned by Johnson Delivery Services LLC, was traveling northbound behind Vehicle 1. Vehicle 2 failed to stop and struck the rear of Vehicle 1. Driver Thompson stated he did not see Vehicle 1 stopped. Two independent witnesses stated they observed Vehicle 2 strike Vehicle 1 without braking, and one witness stated the driver appeared to be looking down. EMS Unit 45 responded and transported Driver Santos to Bellevue Hospital for treatment of neck and back pain. Driver Thompson was issued a summons for VTL 1129(a) - Following Too Closely.",
+  "officer_observations": "Vehicle 1 sustained moderate rear-end damage. Vehicle 2 had front-end damage. Skid marks were not observed on roadway prior to point of impact. Traffic signal was confirmed to be functioning properly. Photos taken of both vehicles, scene, and traffic control devices.",
+  "diagram_present": true,
+  "photos_taken": true,
+  "fault_indicators": {
+    "contributing_factors": [
+      "Driver inattention (V2)",
+      "Following too closely (V2)",
+      "Possible cell phone use (V2)"
+    ],
+    "violations_cited": [
+      {
+        "vtl_section": "VTL 1129(a)",
+        "description": "Following Too Closely",
+        "driver_number": 2
+      }
+    ],
+    "apparent_fault": "Driver of Vehicle 2 (Robert Thompson) failed to maintain safe following distance and struck rear of stopped Vehicle 1. Witnesses observed V2 driver looking down before impact.",
+    "fault_determination": "Driver 2"
+  },
+  "injuries_summary": {
+    "total_injured": 1,
+    "total_killed": 0,
+    "injury_types": [
+      "Neck pain",
+      "Back pain",
+      "Headache"
+    ]
+  },
+  "ny_specific": {
+    "is_hit_and_run": false,
+    "is_leaving_scene": false,
+    "is_dui_dwi": false,
+    "is_construction_zone": false,
+    "is_school_zone": false,
+    "emergency_vehicle_involved": false,
+    "commercial_vehicle_involved": true,
+    "uber_lyft_involved": false,
+    "taxi_tlc_involved": false
+  },
+  "ems_response": {
+    "ems_unit": "EMS Unit 45",
+    "response_time": "8 minutes",
+    "hospitals_used": [
+      "Bellevue Hospital"
+    ]
+  },
+  "additional_reports": {
+    "supplemental_report_exists": false,
+    "crime_report_number": "",
+    "related_case_numbers": []
+  }
+}

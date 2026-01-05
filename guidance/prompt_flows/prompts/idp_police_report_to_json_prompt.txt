@@ -1,0 +1,170 @@
+Analyze the provided police/accident report from a New York Personal Injury case:
+
+<police_report>
+{{doc_text}}
+</police_report>
+
+Extract all relevant information and return a structured JSON object. Pay special attention to fault indicators, Vehicle and Traffic Law violations, and witness information.
+
+{
+  "report_info": {
+    "report_number": "",
+    "precinct": "",
+    "report_type": "",  // "MV-104", "NYPD Accident Report", "Incident Report"
+    "date_prepared": "",
+    "officer_name": "",
+    "officer_badge_number": "",
+    "officer_command": ""
+  },
+  "accident_details": {
+    "date": "",
+    "time": "",
+    "day_of_week": "",
+    "location": {
+      "street_address": "",
+      "cross_street": "",
+      "borough": "",  // "Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"
+      "county": "",
+      "intersection": false,
+      "highway_name": "",
+      "mile_marker": ""
+    },
+    "weather_conditions": "",
+    "road_conditions": "",
+    "lighting_conditions": "",
+    "traffic_control": ""  // "Traffic Light", "Stop Sign", "None", etc.
+  },
+  "vehicles": [
+    {
+      "vehicle_number": 0,
+      "year": "",
+      "make": "",
+      "model": "",
+      "color": "",
+      "license_plate": "",
+      "state": "",
+      "vin": "",
+      "registered_owner": {
+        "name": "",
+        "address": ""
+      },
+      "insurance": {
+        "company": "",
+        "policy_number": ""
+      },
+      "damage_description": "",
+      "towed": false,
+      "tow_company": "",
+      "direction_of_travel": "",
+      "estimated_speed": ""
+    }
+  ],
+  "drivers": [
+    {
+      "vehicle_number": 0,
+      "name": "",
+      "date_of_birth": "",
+      "address": "",
+      "license_number": "",
+      "license_state": "",
+      "license_class": "",
+      "phone": "",
+      "injuries_reported": "",
+      "hospital_transported_to": "",
+      "seatbelt_used": false,
+      "airbag_deployed": false,
+      "alcohol_suspected": false,
+      "drug_suspected": false,
+      "summons_issued": false,
+      "summons_details": []
+    }
+  ],
+  "passengers": [
+    {
+      "vehicle_number": 0,
+      "name": "",
+      "date_of_birth": "",
+      "address": "",
+      "seating_position": "",
+      "injuries_reported": "",
+      "hospital_transported_to": "",
+      "seatbelt_used": false
+    }
+  ],
+  "pedestrians": [
+    {
+      "name": "",
+      "date_of_birth": "",
+      "address": "",
+      "location_at_impact": "",
+      "action_at_time": "",  // "Crossing with signal", "Crossing against signal", "Walking on sidewalk", etc.
+      "injuries_reported": "",
+      "hospital_transported_to": ""
+    }
+  ],
+  "cyclists": [
+    {
+      "name": "",
+      "date_of_birth": "",
+      "address": "",
+      "helmet_used": false,
+      "injuries_reported": "",
+      "hospital_transported_to": ""
+    }
+  ],
+  "witnesses": [
+    {
+      "name": "",
+      "address": "",
+      "phone": "",
+      "statement_summary": ""
+    }
+  ],
+  "narrative": "",
+  "officer_observations": "",
+  "diagram_present": false,
+  "photos_taken": false,
+  "fault_indicators": {
+    "contributing_factors": [],
+    "violations_cited": [
+      {
+        "vtl_section": "",
+        "description": "",
+        "driver_number": 0
+      }
+    ],
+    "apparent_fault": "",  // Description of who appears at fault based on report
+    "fault_determination": ""  // "Driver 1", "Driver 2", "Shared", "Unknown", "Pedestrian"
+  },
+  "injuries_summary": {
+    "total_injured": 0,
+    "total_killed": 0,
+    "injury_types": []
+  },
+  "ny_specific": {
+    "is_hit_and_run": false,
+    "is_leaving_scene": false,
+    "is_dui_dwi": false,
+    "is_construction_zone": false,
+    "is_school_zone": false,
+    "emergency_vehicle_involved": false,
+    "commercial_vehicle_involved": false,
+    "uber_lyft_involved": false,
+    "taxi_tlc_involved": false
+  },
+  "ems_response": {
+    "ems_unit": "",
+    "response_time": "",
+    "hospitals_used": []
+  },
+  "additional_reports": {
+    "supplemental_report_exists": false,
+    "crime_report_number": "",
+    "related_case_numbers": []
+  }
+}
+
+Ensure all dates are in MM/DD/YYYY format and times in HH:MM format.
+Extract all Vehicle and Traffic Law (VTL) citations.
+Identify any apparent fault indicators from the narrative and citations.
+Return only valid JSON with no additional commentary.

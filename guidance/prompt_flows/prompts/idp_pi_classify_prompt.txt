@@ -1,0 +1,42 @@
+You are an expert at classifying legal documents for Personal Injury cases in New York.
+
+Given the document:
+<document>
+{{doc_text}}
+</document>
+
+First, review the document page-by-page and group sequential pages from the same document together.
+Next, for each grouping, identify a class from the list of classes below:
+
+<classes>
+{{classes}}
+</classes>
+
+Document Classification Guidelines for NY Personal Injury:
+
+MEDICAL_RECORDS - Hospital records, physician notes, operative reports, discharge summaries, progress notes
+MEDICAL_BILLS - Itemized bills, invoices from medical providers, hospital billing statements
+IMAGING_REPORTS - MRI, CT scan, X-ray reports, radiology findings
+POLICE_REPORT - NYPD accident reports, MV-104 forms, incident reports
+INSURANCE_POLICY - Declarations pages, policy documents, coverage summaries
+INSURANCE_CORRESPONDENCE - Claim denials, settlement offers, reservation of rights letters
+EMPLOYMENT_RECORDS - Lost wage verification, W-2 forms, pay stubs, employment letters
+IME_REPORT - Independent Medical Examination reports
+DEMAND_LETTER - Attorney demand packages, settlement demands
+BILL_OF_PARTICULARS - Verified Bill of Particulars, Supplemental Bills
+NO_FAULT_FORMS - NF-2, NF-3, NF-4, NF-5 forms, No-Fault applications
+PHOTOGRAPHS - Accident scene photos, injury photos, property damage photos
+UNKNOWN - Documents that don't fit other categories
+
+Return a json array with the following format:
+[
+{"class": "MEDICAL_RECORDS", "page-indexes": [0,1,2]},
+{"class": "POLICE_REPORT", "page-indexes": [3,4]},
+{"class": "MEDICAL_BILLS", "page-indexes": [5]}
+]
+
+Use one of the class names listed above.
+Pay close attention to the <page-index> for each page. Use the value of the page-index to indicate the page numbers that belong to that class.
+
+Think step by step in <thinking>
+Return the json array in <json> tags

@@ -1,0 +1,211 @@
+{
+  "document_info": {
+    "facility_name": "Manhattan Spine & Pain Medicine",
+    "facility_address": "635 Madison Avenue, Suite 1400, New York, NY 10022",
+    "facility_phone": "(212) 555-7890",
+    "record_type": "Outpatient",
+    "date_of_service": "04/15/2024",
+    "date_range": {
+      "start": "03/22/2024",
+      "end": "04/15/2024"
+    }
+  },
+  "patient_info": {
+    "name": "Maria Santos",
+    "date_of_birth": "07/22/1985",
+    "age_at_visit": 38,
+    "medical_record_number": "MSP-2024-4521",
+    "account_number": "ACC-MS-041524"
+  },
+  "accident_info": {
+    "date_of_accident": "03/15/2024",
+    "mechanism_of_injury": "Motor Vehicle Accident",
+    "accident_description": "Rear-end collision while stopped at traffic light"
+  },
+  "chief_complaint": "Persistent neck and back pain, left arm numbness and tingling",
+  "history_of_present_illness": "Patient returns for follow-up, now 1 month post-MVA. She reports persistent neck pain rated 7/10, radiating into left shoulder and arm with associated numbness in the left 4th and 5th digits. Low back pain rated 6/10 with radiation into left buttock and posterior thigh. She has completed 8 sessions of physical therapy with minimal improvement. She reports difficulty sleeping due to pain and has been unable to return to work as an administrative assistant due to inability to sit for prolonged periods.",
+  "diagnoses": [
+    {
+      "description": "Cervical disc herniation C5-C6",
+      "icd_code": "M50.122",
+      "body_part": "Cervical spine",
+      "laterality": "Left",
+      "is_primary": true
+    },
+    {
+      "description": "Cervical radiculopathy C6-C7",
+      "icd_code": "M54.12",
+      "body_part": "Cervical spine",
+      "laterality": "Left",
+      "is_primary": false
+    },
+    {
+      "description": "Lumbar disc bulge L4-L5",
+      "icd_code": "M51.26",
+      "body_part": "Lumbar spine",
+      "laterality": "N/A",
+      "is_primary": false
+    },
+    {
+      "description": "Left lumbar radiculopathy",
+      "icd_code": "M54.16",
+      "body_part": "Lumbar spine",
+      "laterality": "Left",
+      "is_primary": false
+    }
+  ],
+  "injuries": [
+    {
+      "body_part": "Cervical spine",
+      "injury_type": "Disc herniation",
+      "severity": "Moderate-Severe",
+      "description": "Central-left paracentral disc herniation at C5-C6 causing left C6 nerve root compression"
+    },
+    {
+      "body_part": "Lumbar spine",
+      "injury_type": "Disc bulge",
+      "severity": "Moderate",
+      "description": "Broad-based disc bulge at L4-L5 with annular tear and left foraminal narrowing"
+    }
+  ],
+  "imaging_findings": [
+    {
+      "study_type": "MRI",
+      "body_part": "Cervical spine",
+      "date": "04/01/2024",
+      "findings": "C5-C6: Central-left paracentral disc herniation measuring 4mm, causing moderate left neural foraminal narrowing and left C6 nerve root compression. C4-C5: Mild disc bulge without significant stenosis. C6-C7: Small central disc protrusion.",
+      "impression": "C5-C6 disc herniation with left C6 radiculopathy. Recommend clinical correlation and consider interventional treatment."
+    },
+    {
+      "study_type": "MRI",
+      "body_part": "Lumbar spine",
+      "date": "04/01/2024",
+      "findings": "L4-L5: Broad-based disc bulge with superimposed left paracentral protrusion and high signal in the posterior annulus suggesting annular tear. Mild left neural foraminal narrowing. L5-S1: Mild disc desiccation without significant herniation.",
+      "impression": "L4-L5 disc bulge with annular tear and mild left L5 radiculopathy."
+    },
+    {
+      "study_type": "EMG/NCV",
+      "body_part": "Left upper extremity",
+      "date": "04/10/2024",
+      "findings": "Abnormal study showing evidence of left C6 radiculopathy with active denervation in C6 innervated muscles.",
+      "impression": "Electrophysiologic evidence of left C6 radiculopathy, moderate severity."
+    }
+  ],
+  "treatment_provided": [
+    {
+      "type": "Injection",
+      "description": "C5-C6 transforaminal epidural steroid injection under fluoroscopic guidance",
+      "date": "04/15/2024",
+      "provider": "Dr. Robert Kim"
+    }
+  ],
+  "medications_prescribed": [
+    {
+      "name": "Gabapentin",
+      "dosage": "300mg",
+      "frequency": "TID",
+      "purpose": "Neuropathic pain"
+    },
+    {
+      "name": "Meloxicam",
+      "dosage": "15mg",
+      "frequency": "Daily",
+      "purpose": "Anti-inflammatory"
+    }
+  ],
+  "physical_examination": {
+    "vitals": {
+      "blood_pressure": "128/82",
+      "pulse": "78",
+      "temperature": "98.4F"
+    },
+    "findings": [
+      "Cervical paraspinal tenderness and spasm, worse on left",
+      "Spurling test positive on left with reproduction of arm symptoms",
+      "Left shoulder abduction strength 4/5",
+      "Left triceps strength 4/5",
+      "Decreased sensation left 4th and 5th digits",
+      "Left biceps reflex 1+, triceps reflex 1+",
+      "Lumbar paraspinal tenderness L4-S1",
+      "Positive straight leg raise left at 40 degrees"
+    ]
+  },
+  "functional_limitations": {
+    "range_of_motion": [
+      {
+        "body_part": "Cervical spine - Flexion",
+        "normal_range": "45 degrees",
+        "measured_range": "20 degrees",
+        "percent_loss": 56
+      },
+      {
+        "body_part": "Cervical spine - Extension",
+        "normal_range": "45 degrees",
+        "measured_range": "15 degrees",
+        "percent_loss": 67
+      },
+      {
+        "body_part": "Cervical spine - Left rotation",
+        "normal_range": "80 degrees",
+        "measured_range": "35 degrees",
+        "percent_loss": 56
+      },
+      {
+        "body_part": "Lumbar spine - Flexion",
+        "normal_range": "60 degrees",
+        "measured_range": "30 degrees",
+        "percent_loss": 50
+      }
+    ],
+    "work_restrictions": [
+      "Unable to work at this time",
+      "No lifting, pushing, or pulling",
+      "No prolonged sitting or standing"
+    ],
+    "activity_restrictions": [
+      "Limited activities of daily living",
+      "No exercise or physical activity",
+      "Limit driving to essential trips only"
+    ],
+    "disability_duration": "Continued - minimum 6-8 weeks additional"
+  },
+  "referrals": [
+    {
+      "specialty": "Neurosurgery",
+      "reason": "Evaluation for possible surgical intervention if conservative treatment fails",
+      "date": "04/15/2024"
+    }
+  ],
+  "follow_up": {
+    "recommended": "Return in 4 weeks for re-evaluation",
+    "date": "05/13/2024",
+    "instructions": "Continue physical therapy 3x/week. May need additional injection or surgical consultation if symptoms persist."
+  },
+  "prognosis": "Guarded to poor for complete recovery. Patient has documented disc herniations with radiculopathy confirmed on EMG. She may require surgical intervention if conservative treatment fails. Some permanent limitation of cervical and lumbar spine function is anticipated.",
+  "causation_statement": "Based on my examination, review of imaging, and the temporal relationship between the MVA and symptom onset, it is my medical opinion that the cervical and lumbar disc injuries are causally related to the motor vehicle accident of 03/15/2024.",
+  "ny_serious_injury_indicators": {
+    "permanent_consequential_limitation": true,
+    "significant_limitation_of_use": true,
+    "permanent_loss_of_use": false,
+    "fracture": false,
+    "dismemberment": false,
+    "significant_disfigurement": false,
+    "loss_of_fetus": false,
+    "ninety_one_eighty_disability": true,
+    "supporting_language": [
+      "MRI-confirmed C5-C6 disc herniation with radiculopathy",
+      "EMG-confirmed nerve damage (active denervation)",
+      "56-67% loss of cervical ROM persisting beyond 30 days",
+      "50% loss of lumbar flexion",
+      "Prognosis: permanent limitation anticipated",
+      "Unable to work since accident (now 30+ days)",
+      "May require surgical intervention"
+    ]
+  },
+  "provider_info": {
+    "name": "Robert Kim, MD",
+    "credentials": "MD, FAAPMR",
+    "specialty": "Pain Management / Physical Medicine & Rehabilitation",
+    "npi": "9876543210"
+  }
+}

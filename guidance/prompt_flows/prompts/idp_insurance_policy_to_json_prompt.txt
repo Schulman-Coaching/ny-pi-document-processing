@@ -1,0 +1,157 @@
+Analyze the provided insurance policy/declarations page from a New York Personal Injury case:
+
+<insurance_document>
+{{doc_text}}
+</insurance_document>
+
+Extract all relevant coverage information and return a structured JSON object. Pay special attention to NY mandatory minimums, SUM/UM coverage, and No-Fault (PIP) benefits.
+
+{
+  "policy_info": {
+    "insurance_company": "",
+    "policy_number": "",
+    "policy_period": {
+      "effective_date": "",
+      "expiration_date": ""
+    },
+    "policy_type": "",  // "Personal Auto", "Commercial Auto", "Homeowners", "General Liability", "Umbrella"
+    "policy_form": "",
+    "naic_code": ""
+  },
+  "named_insured": {
+    "name": "",
+    "address": {
+      "street": "",
+      "city": "",
+      "state": "",
+      "zip": ""
+    },
+    "additional_insureds": []
+  },
+  "vehicles_covered": [
+    {
+      "year": "",
+      "make": "",
+      "model": "",
+      "vin": "",
+      "vehicle_number": 0,
+      "garaging_address": ""
+    }
+  ],
+  "coverages": {
+    "bodily_injury_liability": {
+      "per_person": 0,
+      "per_accident": 0,
+      "combined_single_limit": 0,
+      "deductible": 0
+    },
+    "property_damage_liability": {
+      "limit": 0,
+      "deductible": 0
+    },
+    "personal_injury_protection_no_fault": {
+      "basic_pip": 0,  // NY minimum is $50,000
+      "additional_pip": 0,
+      "obel": 0,  // Optional Basic Economic Loss
+      "apip": 0,  // Additional Personal Injury Protection
+      "work_loss_monthly_max": 0,
+      "death_benefit": 0
+    },
+    "uninsured_motorist": {
+      "bodily_injury_per_person": 0,
+      "bodily_injury_per_accident": 0,
+      "property_damage": 0
+    },
+    "underinsured_motorist_sum": {
+      "per_person": 0,
+      "per_accident": 0
+    },
+    "medical_payments": {
+      "limit": 0
+    },
+    "collision": {
+      "limit": "",  // "ACV" or specific amount
+      "deductible": 0
+    },
+    "comprehensive": {
+      "limit": "",
+      "deductible": 0
+    },
+    "rental_reimbursement": {
+      "daily_limit": 0,
+      "max_days": 0,
+      "total_limit": 0
+    },
+    "towing_labor": {
+      "limit": 0
+    }
+  },
+  "ny_specific_coverages": {
+    "supplementary_uninsured_motorist_sum": {
+      "per_person": 0,
+      "per_accident": 0,
+      "stacked": false
+    },
+    "death_indemnity": 0,
+    "obel_elected": false,
+    "full_glass_coverage": false
+  },
+  "exclusions": [],
+  "endorsements": [
+    {
+      "number": "",
+      "name": "",
+      "description": ""
+    }
+  ],
+  "premium_info": {
+    "total_premium": 0,
+    "payment_plan": "",
+    "breakdown": [
+      {
+        "coverage": "",
+        "premium": 0
+      }
+    ]
+  },
+  "drivers_listed": [
+    {
+      "name": "",
+      "date_of_birth": "",
+      "license_number": "",
+      "relationship": "",
+      "driver_status": ""  // "Rated", "Excluded", "Occasional"
+    }
+  ],
+  "agent_info": {
+    "name": "",
+    "agency": "",
+    "phone": "",
+    "address": ""
+  },
+  "claims_info": {
+    "claims_phone": "",
+    "claims_address": "",
+    "claim_number": ""
+  },
+  "liability_analysis": {
+    "meets_ny_minimum": false,
+    "ny_minimum_requirements": {
+      "bi_per_person": 25000,
+      "bi_per_accident": 50000,
+      "pd": 10000,
+      "pip": 50000
+    },
+    "total_available_bi": 0,
+    "total_available_um_sum": 0,
+    "stacking_available": false
+  },
+  "document_type": "",  // "Declarations Page", "Full Policy", "Certificate of Insurance", "Binder"
+  "additional_notes": ""
+}
+
+Ensure all monetary values are numbers (not strings).
+Identify if policy meets NY mandatory minimums.
+Calculate total available coverage for BI claims.
+Flag if SUM coverage is present and stacking is available.
+Return only valid JSON with no additional commentary.
