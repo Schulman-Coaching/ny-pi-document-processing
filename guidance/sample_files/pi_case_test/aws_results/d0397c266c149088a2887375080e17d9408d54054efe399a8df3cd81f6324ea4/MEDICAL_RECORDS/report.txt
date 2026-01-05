@@ -1,0 +1,56 @@
+{
+  "patientName": "Maria Rodriguez",
+  "dateOfBirth": "03/15/1985",
+  "medicalRecordNumber": "BH-2024-789456",
+  "dateOfService": "01/15/2024",
+  "chiefComplaint": "Motor vehicle accident - neck and back pain",
+  "historyOfPresentIllness": "38-year-old female presents to ED via ambulance following a motor vehicle collision at the intersection of Broadway and 42nd Street, Manhattan. Patient was the restrained driver of a vehicle that was struck on the driver's side by another vehicle that ran a red light. Patient reports immediate onset of severe neck pain, lower back pain, and left shoulder pain. Denies loss of consciousness. GCS 15 at scene.",
+  "physicalExamination": {
+    "vitalSigns": {
+      "bloodPressure": "142/88",
+      "heartRate": 96,
+      "respiratoryRate": 18,
+      "temperature": 98.6,
+      "oxygenSaturation": 99
+    },
+    "general": "Alert, oriented x3, appears uncomfortable, in moderate distress",
+    "heent": "Normocephalic, atraumatic. PERRLA. No facial tenderness.",
+    "neck": "Cervical spine tenderness at C5-C7. Decreased ROM - flexion limited to 30 degrees, extension limited to 15 degrees due to pain. Paraspinal muscle spasm noted.",
+    "back": "Lumbar spine tenderness at L4-S1. Paraspinal muscle spasm. SLR positive bilaterally at 45 degrees.",
+    "extremities": "Left shoulder tenderness over AC joint. ROM limited by pain.",
+    "neurological": "Strength 5/5 bilateral upper and lower extremities. Sensation intact. DTRs 2+ symmetric."
+  },
+  "diagnosticImaging": {
+    "ctCervicalSpine": "No acute fracture or dislocation. Mild degenerative changes at C5-C6.",
+    "ctLumbarSpine": "No acute fracture. L4-L5 and L5-S1 disc bulging.",
+    "xrayLeftShoulder": "No acute fracture. AC joint widening suggestive of Grade I separation."
+  },
+  "assessment": [
+    {
+      "diagnosis": "Cervical strain/sprain",
+      "icd10Code": "S13.4XXA"
+    },
+    {
+      "diagnosis": "Lumbar strain/sprain with radiculopathy",
+      "icd10Code": "S33.5XXA, M54.16"
+    },
+    {
+      "diagnosis": "AC joint sprain, Grade I",
+      "icd10Code": "S43.50XA"
+    },
+    {
+      "diagnosis": "Post-traumatic headache",
+      "icd10Code": "G44.329"
+    }
+  ],
+  "plan": [
+    "Cervical collar for comfort",
+    "Flexeril 10mg TID for muscle spasm",
+    "Ibuprofen 800mg TID with food",
+    "Follow up with orthopedics within 1 week",
+    "MRI cervical and lumbar spine recommended if symptoms persist",
+    "Patient advised no work X 2 weeks",
+    "Return precautions given"
+  ],
+  "prognosis": "Patient is unable to perform usual daily activities due to pain and limited mobility. Prognosis for full recovery uncertain pending further evaluation."
+}

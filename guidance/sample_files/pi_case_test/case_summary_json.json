@@ -1,0 +1,216 @@
+{
+  "case_id": "aws_results",
+  "generated_date": "2026-01-06T00:50:01.816132",
+  "extraction_type": "structured_json",
+  "document_counts": {
+    "medical_records": 1,
+    "police_reports": 1,
+    "insurance_policies": 1,
+    "medical_bills": 1
+  },
+  "plaintiff": {
+    "name": "Maria Rodriguez",
+    "dob": "03/15/1985",
+    "address": "456 East 78th Street, Apt 4B, New York, NY 10075",
+    "mrn": "BH-2024-789456"
+  },
+  "defendant": {
+    "name": "James Thompson",
+    "vehicle": "2019 Ford F-150",
+    "insurance": "Progressive Commercial Policy #PC-2024-45678",
+    "violations": [
+      "VTL 1111(d)(1) - Failure to obey traffic control device (red light)",
+      "VTL 1225-c - Use of mobile telephone while driving"
+    ],
+    "contributing_factors": []
+  },
+  "accident": {
+    "date": "01/15/2024",
+    "time": "18:32",
+    "location": "Broadway & W 42nd Street, Manhattan, New York",
+    "report_number": "2024-MAN-0115-7892",
+    "description": "On the above date and time, the undersigned officer responded to a motor vehicle collision at the intersection of Broadway and West 42nd Street. Upon arrival, observed Vehicle 1 (2021 Honda Accord) with significant driver-side damage and Vehicle 2 (2019 Ford F-150) with front-end damage.\n\nInvestigation revealed that Vehicle 1 was traveling westbound on 42nd Street with a green light. Vehicle 2 was traveling northbound on Broadway. Witness statements and traffic camera footage confirm that Vehicle 2 proceeded through a red traffic signal, striking Vehicle 1 in the intersection. Driver of Vehicle 2 (Thompson) stated he 'thought the light was yellow' and 'didn't see the other car.' Driver appeared distracted and was observed holding a cell phone at the time of the collision.",
+    "weather": "",
+    "road_conditions": ""
+  },
+  "injuries": {
+    "diagnoses": [
+      "Cervical strain/sprain",
+      "Lumbar strain/sprain with radiculopathy",
+      "AC joint sprain, Grade I",
+      "Post-traumatic headache"
+    ],
+    "icd_codes": [
+      "G44.329",
+      "S43.50XA",
+      "S33.5XXA, M54.16",
+      "S13.4XXA"
+    ],
+    "body_parts": [
+      "Lumbar Spine (Lower Back)",
+      "Cervical Spine (Neck)",
+      "Shoulder"
+    ],
+    "treatment_plan": [
+      "Cervical collar for comfort",
+      "Flexeril 10mg TID for muscle spasm",
+      "Ibuprofen 800mg TID with food",
+      "Follow up with orthopedics within 1 week",
+      "MRI cervical and lumbar spine recommended if symptoms persist",
+      "Patient advised no work X 2 weeks",
+      "Return precautions given"
+    ],
+    "work_restrictions": "Patient advised no work X 2 weeks",
+    "prognosis": "Patient is unable to perform usual daily activities due to pain and limited mobility. Prognosis for full recovery uncertain pending further evaluation.",
+    "imaging_findings": [
+      "ctCervicalSpine: No acute fracture or dislocation. Mild degenerative changes at C5-C6.",
+      "ctLumbarSpine: No acute fracture. L4-L5 and L5-S1 disc bulging.",
+      "xrayLeftShoulder: No acute fracture. AC joint widening suggestive of Grade I separation."
+    ]
+  },
+  "medical_bills": {
+    "providers": [
+      "BELLEVUE HOSPITAL CENTER"
+    ],
+    "total_charges": 6290.0,
+    "total_paid": 5032.0,
+    "total_owed": 630.0,
+    "total_adjustments": 628.0,
+    "liens": [
+      {
+        "provider": "BELLEVUE HOSPITAL CENTER",
+        "amount": 630.0
+      }
+    ],
+    "cpt_codes": [
+      "72131",
+      "73030",
+      "99070",
+      "A0427",
+      "99285",
+      "96372",
+      "72125"
+    ],
+    "line_items": [
+      {
+        "date": "01/15/2024",
+        "cpt": "99285",
+        "description": "Emergency Dept Visit - Level 5 (High Severity)",
+        "charge": 1850.0
+      },
+      {
+        "date": "01/15/2024",
+        "cpt": "72125",
+        "description": "CT Cervical Spine without Contrast",
+        "charge": 1200.0
+      },
+      {
+        "date": "01/15/2024",
+        "cpt": "72131",
+        "description": "CT Lumbar Spine without Contrast",
+        "charge": 1200.0
+      },
+      {
+        "date": "01/15/2024",
+        "cpt": "73030",
+        "description": "X-ray Shoulder, Complete",
+        "charge": 285.0
+      },
+      {
+        "date": "01/15/2024",
+        "cpt": "96372",
+        "description": "Therapeutic Injection",
+        "charge": 180.0
+      },
+      {
+        "date": "01/15/2024",
+        "cpt": "99070",
+        "description": "Cervical Collar Supply",
+        "charge": 125.0
+      },
+      {
+        "date": "01/15/2024",
+        "cpt": "A0427",
+        "description": "Ambulance Transport, Advanced Life Support",
+        "charge": 1450.0
+      }
+    ]
+  },
+  "insurance_coverage": {
+    "plaintiff_policy": {
+      "carrier": "State Farm Insurance",
+      "policy_number": "SF-2024-78901-NY",
+      "bi_limits": "$100,000/300,000",
+      "pip_limits": "$150,000",
+      "sum_limits": "$100,000/300,000",
+      "pip_amount": 150000,
+      "sum_amount": 100000,
+      "um_amount": 100000
+    },
+    "defendant_policy": {},
+    "pip_available": 150000,
+    "sum_available": 100000,
+    "um_available": 100000,
+    "total_available_coverage": 250000,
+    "meets_ny_minimum": true
+  },
+  "liability_analysis": {
+    "fault_determination": "Based on witness statements, physical evidence, and traffic camera footage, Vehicle 2 driver (James Thompson) is determined to be AT FAULT for this collision due to failure to obey traffic signal and distracted driving.",
+    "at_fault_party": "Vehicle 2 driver (James Thompson)",
+    "contributing_factors": [],
+    "evidence": [
+      "2 witness statement(s)",
+      "Traffic camera footage"
+    ],
+    "liability_percentage": {
+      "plaintiff": 0,
+      "defendant": 100
+    }
+  },
+  "ny_serious_injury_analysis": {
+    "threshold_categories": [
+      "Permanent consequential limitation",
+      "Significant limitation of use of body function/system",
+      "90/180 Day Rule - Substantial limitation of daily activities"
+    ],
+    "supporting_evidence": [
+      "Work restriction: Patient advised no work X 2 weeks",
+      "Radiculopathy diagnosis",
+      "Disc pathology: ctLumbarSpine: No acute fracture. L4-L5 and L5-S1 disc bulging.",
+      "Prognosis: Patient is unable to perform usual daily activities due to pain and limited mobility. Prognosis for full recovery uncertain pending further evaluation."
+    ],
+    "meets_threshold": true,
+    "notes": "Case likely meets NY serious injury threshold based on documented injuries and limitations."
+  },
+  "special_damages": {
+    "medical_expenses": {
+      "total_billed": 6290.0,
+      "paid_by_insurance": 5032.0,
+      "adjustments": 628.0,
+      "outstanding": 630.0,
+      "liens": [
+        {
+          "provider": "BELLEVUE HOSPITAL CENTER",
+          "amount": 630.0
+        }
+      ]
+    },
+    "lost_wages": {
+      "estimated": 0.0,
+      "notes": "To be calculated based on employment records"
+    },
+    "total_special_damages": 6290.0
+  },
+  "recommended_actions": [
+    "Schedule orthopedic follow-up appointment",
+    "Schedule MRI as recommended in treatment plan",
+    "Obtain employment records for lost wage calculation",
+    "Verify medical liens totaling $630.00",
+    "Request traffic camera footage via FOIL request",
+    "Send preservation letter to defendant's insurance carrier",
+    "Request certified copy of police report",
+    "Obtain complete medical records from all treating providers",
+    "File No-Fault claim (PIP available: $150,000.00)",
+    "Consider demand letter after maximum medical improvement"
+  ]
+}

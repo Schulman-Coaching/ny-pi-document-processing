@@ -1,0 +1,194 @@
+{
+  "report_info": {
+    "report_number": "2024-MAN-0115-7892",
+    "precinct": "Times Square (MTS)",
+    "report_type": "MOTOR VEHICLE ACCIDENT REPORT (MV-104)",
+    "date_prepared": "01/15/2024",
+    "officer_name": "P.O. Michael Davis",
+    "officer_badge_number": "4521",
+    "officer_command": "Sgt. Patricia Williams, Shield #2187"
+  },
+  "accident_details": {
+    "date": "01/15/2024",
+    "time": "18:32",
+    "day_of_week": "",
+    "location": {
+      "street_address": "",
+      "cross_street": "Broadway & W 42nd Street",
+      "borough": "Manhattan",
+      "county": "New York",
+      "intersection": true,
+      "highway_name": "",
+      "mile_marker": ""
+    },
+    "weather_conditions": "",
+    "road_conditions": "",
+    "lighting_conditions": "",
+    "traffic_control": ""
+  },
+  "vehicles": [
+    {
+      "vehicle_number": 1,
+      "year": 2021,
+      "make": "Honda",
+      "model": "Accord",
+      "color": "",
+      "license_plate": "ABC-1234",
+      "state": "NY",
+      "vin": "",
+      "registered_owner": {
+        "name": "Maria Rodriguez",
+        "address": "456 East 78th Street, Apt 4B, New York, NY 10075"
+      },
+      "insurance": {
+        "company": "State Farm",
+        "policy_number": "SF-2024-78901"
+      },
+      "damage_description": "Heavy damage to driver side door and quarter panel",
+      "towed": false,
+      "tow_company": "",
+      "direction_of_travel": "westbound",
+      "estimated_speed": ""
+    },
+    {
+      "vehicle_number": 2,
+      "year": 2019,
+      "make": "Ford",
+      "model": "F-150",
+      "color": "",
+      "license_plate": "XYZ-9876",
+      "state": "NJ",
+      "vin": "",
+      "registered_owner": {
+        "name": "James Thompson",
+        "address": "123 Main Street, Jersey City, NJ 07302"
+      },
+      "insurance": {
+        "company": "Progressive Commercial",
+        "policy_number": "PC-2024-45678"
+      },
+      "damage_description": "Front bumper and hood damage",
+      "towed": false,
+      "tow_company": "",
+      "direction_of_travel": "northbound",
+      "estimated_speed": ""
+    }
+  ],
+  "drivers": [
+    {
+      "vehicle_number": 1,
+      "name": "Maria Rodriguez",
+      "date_of_birth": "03/15/1985",
+      "address": "456 East 78th Street, Apt 4B, New York, NY 10075",
+      "license_number": "123-456-789",
+      "license_state": "NY",
+      "license_class": "",
+      "phone": "",
+      "injuries_reported": "Complaint of neck, back, and shoulder pain. Transported to Bellevue.",
+      "hospital_transported_to": "Bellevue",
+      "seatbelt_used": false,
+      "airbag_deployed": false,
+      "alcohol_suspected": false,
+      "drug_suspected": false,
+      "summons_issued": false,
+      "summons_details": []
+    },
+    {
+      "vehicle_number": 2,
+      "name": "James Thompson",
+      "date_of_birth": "07/22/1978",
+      "address": "123 Main Street, Jersey City, NJ 07302",
+      "license_number": "T1234-56789-01234",
+      "license_state": "NJ",
+      "license_class": "",
+      "phone": "",
+      "injuries_reported": "None reported. Refused medical attention.",
+      "hospital_transported_to": "",
+      "seatbelt_used": false,
+      "airbag_deployed": false,
+      "alcohol_suspected": false,
+      "drug_suspected": false,
+      "summons_issued": true,
+      "summons_details": [
+        {
+          "vtl_section": "1111(d)(1)",
+          "description": "Failure to obey traffic control device (red light)"
+        },
+        {
+          "vtl_section": "1225-c",
+          "description": "Use of mobile telephone while driving"
+        }
+      ]
+    }
+  ],
+  "passengers": [],
+  "pedestrians": [],
+  "cyclists": [],
+  "witnesses": [
+    {
+      "name": "Robert Kim",
+      "address": "",
+      "phone": "212-555-0147",
+      "statement_summary": "confirmed Vehicle 2 ran red light"
+    },
+    {
+      "name": "Sarah Johnson",
+      "address": "",
+      "phone": "917-555-0298",
+      "statement_summary": "confirmed same"
+    }
+  ],
+  "narrative": "On the above date and time, the undersigned officer responded to a motor vehicle collision at the intersection of Broadway and West 42nd Street. Upon arrival, observed Vehicle 1 (2021 Honda Accord) with significant driver-side damage and Vehicle 2 (2019 Ford F-150) with front-end damage.\n\nInvestigation revealed that Vehicle 1 was traveling westbound on 42nd Street with a green light. Vehicle 2 was traveling northbound on Broadway. Witness statements and traffic camera footage confirm that Vehicle 2 proceeded through a red traffic signal, striking Vehicle 1 in the intersection. Driver of Vehicle 2 (Thompson) stated he 'thought the light was yellow' and 'didn't see the other car.' Driver appeared distracted and was observed holding a cell phone at the time of the collision.",
+  "officer_observations": "",
+  "diagram_present": false,
+  "photos_taken": false,
+  "fault_indicators": {
+    "contributing_factors": [],
+    "violations_cited": [
+      {
+        "vtl_section": "1111(d)(1)",
+        "description": "Failure to obey traffic control device (red light)",
+        "driver_number": 2
+      },
+      {
+        "vtl_section": "1225-c",
+        "description": "Use of mobile telephone while driving",
+        "driver_number": 2
+      }
+    ],
+    "apparent_fault": "Vehicle 2 driver (James Thompson)",
+    "fault_determination": "Based on witness statements, physical evidence, and traffic camera footage, Vehicle 2 driver (James Thompson) is determined to be AT FAULT for this collision due to failure to obey traffic signal and distracted driving."
+  },
+  "injuries_summary": {
+    "total_injured": 1,
+    "total_killed": 0,
+    "injury_types": [
+      "neck",
+      "back",
+      "shoulder"
+    ]
+  },
+  "ny_specific": {
+    "is_hit_and_run": false,
+    "is_leaving_scene": false,
+    "is_dui_dwi": false,
+    "is_construction_zone": false,
+    "is_school_zone": false,
+    "emergency_vehicle_involved": false,
+    "commercial_vehicle_involved": true,
+    "uber_lyft_involved": false,
+    "taxi_tlc_involved": false
+  },
+  "ems_response": {
+    "ems_unit": "",
+    "response_time": "",
+    "hospitals_used": [
+      "Bellevue"
+    ]
+  },
+  "additional_reports": {
+    "supplemental_report_exists": false,
+    "crime_report_number": "",
+    "related_case_numbers": []
+  }
+}

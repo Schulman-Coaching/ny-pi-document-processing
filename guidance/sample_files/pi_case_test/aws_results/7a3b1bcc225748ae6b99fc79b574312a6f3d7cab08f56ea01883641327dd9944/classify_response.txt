@@ -1,0 +1,18 @@
+<thinking>
+1. Review the document page-by-page:
+   - Page 0: This appears to be a medical bill or patient statement, containing itemized charges, payment summary, and insurance information.
+   - Page 1: This page contains a medical lien notice related to the patient's billing.
+
+2. Group the pages together since they are sequential and related to the same document.
+
+3. Identify the appropriate class for this document grouping. Based on the content, this appears to be a MEDICAL_BILLS document.
+</thinking>
+
+<json>
+[
+  {
+    "class": "MEDICAL_BILLS",
+    "page-indexes": [0, 1]
+  }
+]
+</json>

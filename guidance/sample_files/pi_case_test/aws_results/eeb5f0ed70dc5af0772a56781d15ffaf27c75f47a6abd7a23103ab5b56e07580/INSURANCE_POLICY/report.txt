@@ -1,0 +1,165 @@
+{
+  "policy_info": {
+    "insurance_company": "State Farm Insurance",
+    "policy_number": "SF-2024-78901-NY",
+    "policy_period": {
+      "effective_date": "07/01/2023",
+      "expiration_date": "07/01/2024"
+    },
+    "policy_type": "Personal Auto Policy",
+    "policy_form": "",
+    "naic_code": ""
+  },
+  "named_insured": {
+    "name": "Maria Rodriguez",
+    "address": {
+      "street": "456 East 78th Street, Apt 4B",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10075"
+    },
+    "additional_insureds": []
+  },
+  "vehicles_covered": [
+    {
+      "year": 2021,
+      "make": "Honda",
+      "model": "Accord EX-L",
+      "vin": "1HGCV1F34MA123456",
+      "vehicle_number": 1,
+      "garaging_address": "Same as above"
+    }
+  ],
+  "coverages": {
+    "bodily_injury_liability": {
+      "per_person": 100000,
+      "per_accident": 300000,
+      "combined_single_limit": 0,
+      "deductible": 0
+    },
+    "property_damage_liability": {
+      "limit": 100000,
+      "deductible": 0
+    },
+    "personal_injury_protection_no_fault": {
+      "basic_pip": 50000,
+      "additional_pip": 100000,
+      "obel": 0,
+      "apip": 0,
+      "work_loss_monthly_max": 2000,
+      "death_benefit": 2000
+    },
+    "uninsured_motorist": {
+      "bodily_injury_per_person": 100000,
+      "bodily_injury_per_accident": 300000,
+      "property_damage": 0
+    },
+    "underinsured_motorist_sum": {
+      "per_person": 100000,
+      "per_accident": 300000
+    },
+    "medical_payments": {
+      "limit": 10000
+    },
+    "collision": {
+      "limit": "Actual Cash Value",
+      "deductible": 500
+    },
+    "comprehensive": {
+      "limit": "Actual Cash Value",
+      "deductible": 250
+    },
+    "rental_reimbursement": {
+      "daily_limit": 50,
+      "max_days": 30,
+      "total_limit": 1500
+    },
+    "towing_labor": {
+      "limit": 0
+    }
+  },
+  "ny_specific_coverages": {
+    "supplementary_uninsured_motorist_sum": {
+      "per_person": 100000,
+      "per_accident": 300000,
+      "stacked": false
+    },
+    "death_indemnity": 2000,
+    "obel_elected": false,
+    "full_glass_coverage": false
+  },
+  "exclusions": [],
+  "endorsements": [],
+  "premium_info": {
+    "total_premium": 1995,
+    "payment_plan": "",
+    "breakdown": [
+      {
+        "coverage": "Bodily Injury Liability",
+        "premium": 425
+      },
+      {
+        "coverage": "Property Damage Liability",
+        "premium": 215
+      },
+      {
+        "coverage": "Personal Injury Protection (No-Fault)",
+        "premium": 385
+      },
+      {
+        "coverage": "Additional PIP (Optional)",
+        "premium": 125
+      },
+      {
+        "coverage": "Uninsured Motorist BI",
+        "premium": 145
+      },
+      {
+        "coverage": "Underinsured Motorist BI (SUM)",
+        "premium": 95
+      },
+      {
+        "coverage": "Collision",
+        "premium": 340
+      },
+      {
+        "coverage": "Comprehensive",
+        "premium": 185
+      },
+      {
+        "coverage": "Medical Payments",
+        "premium": 45
+      },
+      {
+        "coverage": "Rental Reimbursement",
+        "premium": 35
+      }
+    ]
+  },
+  "drivers_listed": [],
+  "agent_info": {
+    "name": "John Smith",
+    "agency": "789 Park Avenue, New York, NY 10021",
+    "phone": "(212) 555-0100",
+    "address": ""
+  },
+  "claims_info": {
+    "claims_phone": "",
+    "claims_address": "",
+    "claim_number": ""
+  },
+  "liability_analysis": {
+    "meets_ny_minimum": true,
+    "ny_minimum_requirements": {
+      "bi_per_person": 25000,
+      "bi_per_accident": 50000,
+      "pd": 10000,
+      "pip": 50000
+    },
+    "total_available_bi": 300000,
+    "total_available_um_sum": 300000,
+    "stacking_available": false
+  },
+  "document_type": "Personal Auto Policy Declarations",
+  "additional_notes": ""
+}

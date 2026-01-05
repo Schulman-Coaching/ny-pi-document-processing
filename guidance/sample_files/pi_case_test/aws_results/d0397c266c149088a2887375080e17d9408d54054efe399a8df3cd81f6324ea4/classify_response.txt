@@ -1,0 +1,18 @@
+<thinking>
+1. Review the document page-by-page:
+   Page 0: This page contains an emergency department medical record, including patient information, history of present illness, physical examination, diagnostic imaging, and assessment.
+   Page 1: This page continues the emergency department medical record, including the plan of care and physician notes.
+
+2. Group the pages together since they are from the same document.
+
+3. Identify the appropriate class for this document. Based on the content, this document is a MEDICAL_RECORDS document, as it contains a detailed medical record for a patient.
+</thinking>
+
+<json>
+[
+  {
+    "class": "MEDICAL_RECORDS",
+    "page-indexes": [0, 1]
+  }
+]
+</json>
