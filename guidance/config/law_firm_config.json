@@ -1,0 +1,28 @@
+{
+  "firm_name": "Smith & Associates, P.C.",
+  "firm_address": {
+    "street": "123 Broadway, Suite 500",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10006"
+  },
+  "firm_phone": "(212) 555-1234",
+  "firm_fax": "(212) 555-1235",
+  "firm_email": "info@smithlaw.com",
+  "firm_website": "www.smithlaw.com",
+  "attorney": {
+    "name": "John Smith, Esq.",
+    "bar_number": "NY-123456",
+    "email": "jsmith@smithlaw.com",
+    "direct_phone": "(212) 555-1236"
+  },
+  "letterhead": {
+    "use_centered_header": true,
+    "include_bar_number": true
+  },
+  "defaults": {
+    "response_deadline_days": 30,
+    "certified_mail": true,
+    "cc_client": true
+  }
+}
