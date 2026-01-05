@@ -1,0 +1,51 @@
+<document-pages>
+<page>
+<page-index>0</page-index>
+<page-content>
+BELLEVUE HOSPITAL CENTER 
+
+462 First Avenue, New York, NY 10016 
+
+Emergency Department Medical Record 
+
+Patient Name: Maria Rodriguez DOB: 03/15/1985 MRN: BH-2024-789456 Date of Service: 01/15/2024 Chief Complaint: Motor vehicle accident - neck and back pain 
+
+HISTORY OF PRESENT ILLNESS: 
+
+38-year-old female presents to ED via ambulance following a motor vehicle collision at the intersection of Broadway and 42nd Street, Manhattan. Patient was the restrained driver of a vehicle that was struck on the driver's side by another vehicle that ran a red light. Patient reports immediate onset of severe neck pain, lower back pain, and left shoulder pain. Denies loss of consciousness. GCS 15 at scene. 
+
+PHYSICAL EXAMINATION: 
+
+Vital Signs: BP 142/88, HR 96, RR 18, Temp 98.6F, SpO2 99% RA General: Alert, oriented x3, appears uncomfortable, in moderate distress HEENT: Normocephalic, atraumatic. PERRLA. No facial tenderness. Neck: Cervical spine tenderness at C5-C7. Decreased ROM - flexion limited to 30 degrees, extension limited to 15 degrees due to pain. Paraspinal muscle spasm noted. Back: Lumbar spine tenderness at L4-S1. Paraspinal muscle spasm. SLR positive bilaterally at 45 degrees. Extremities: Left shoulder tenderness over AC joint. ROM limited by pain. Neurological: Strength 5/5 bilateral upper and lower extremities. Sensation intact. DTRs 2+ symmetric. 
+
+DIAGNOSTIC IMAGING: 
+
+CT Cervical Spine: No acute fracture or dislocation. Mild degenerative changes at C5-C6. CT Lumbar Spine: No acute fracture. L4-L5 and L5-S1 disc bulging. X-ray Left Shoulder: No acute fracture. AC joint widening suggestive of Grade I separation. 
+
+ASSESSMENT: 
+
+1. Cervical strain/sprain ICD-10: S13.4XXA 
+2. Lumbar strain/sprain with radiculopathy ICD-10: S33.5XXA, M54.16 
+3. AC joint sprain, Grade I ICD-10: S43.50XA 
+4. Post-traumatic headache ICD-10: G44.329 </page-content>
+</page>
+
+<page>
+<page-index>1</page-index>
+<page-content>
+PLAN: 
+
+1. Cervical collar for comfort 
+2. Flexeril 10mg TID for muscle spasm 
+3. Ibuprofen 800mg TID with food 
+4. Follow up with orthopedics within 1 week 
+5. MRI cervical and lumbar spine recommended if symptoms persist 
+6. Patient advised no work X 2 weeks 
+7. Return precautions given 
+
+Patient is unable to perform usual daily activities due to pain and limited mobility. Prognosis for full recovery uncertain pending further evaluation. 
+
+Attending Physician: James Chen, MD Date/Time: 01/15/2024 22:45 </page-content>
+</page>
+
+</document-pages>

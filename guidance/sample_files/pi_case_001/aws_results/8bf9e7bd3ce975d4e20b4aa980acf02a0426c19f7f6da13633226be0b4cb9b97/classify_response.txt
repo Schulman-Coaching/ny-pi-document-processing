@@ -1,0 +1,15 @@
+<thinking>
+First, I will review the document page-by-page and group the sequential pages from the same document together.
+
+The document has 2 pages, so I will group them together.
+
+Next, I will identify the class for this document grouping. Based on the content, this appears to be an insurance policy document, so the appropriate class is "INSURANCE_POLICY".
+
+Therefore, the final JSON array will be:
+</thinking>
+
+<json>
+[
+{"class": "INSURANCE_POLICY", "page-indexes": [0, 1]}
+]
+</json>

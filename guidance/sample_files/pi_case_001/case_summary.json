@@ -1,0 +1,179 @@
+{
+  "case_id": "aws_results",
+  "generated_date": "2026-01-06T00:18:36.345203",
+  "document_counts": {
+    "medical_records": 3,
+    "police_reports": 3,
+    "insurance_policies": 3,
+    "medical_bills": 1
+  },
+  "plaintiff": {
+    "name": "Maria Rodriguez",
+    "dob": "03/15/1985",
+    "address": "456 East 78th Street, Apt 4B, New York, NY 10075 License: NY DL# 123-456-789 State: NY Vehicle: 2021 Honda Accord Plate: ABC-1234 (NY) Insurance: State Farm Policy #SF-2024-78901 Damage: Heavy damage to driver side door and quarter panel Injury: Complaint of neck, back, and shoulder pain. Transported to Bellevue."
+  },
+  "defendant": {
+    "name": "",
+    "vehicle": "2021 Honda Accord",
+    "insurance": "Progressive Commercial Policy #PC-2024-45678 Damage: Front bumper and hood damage Injury: None reported. Refused medical attention.",
+    "violations": [
+      "VTL 1111(d)(1) - Failure to obey traffic control device (red light) VTL 1225-c - Use of mobile telephone while driving "
+    ]
+  },
+  "accident": {
+    "date": "01/15/2024",
+    "time": "18:32",
+    "location": "Broadway & W 42nd Street, Manhattan, NY",
+    "report_number": "2024-MAN-0115-7892",
+    "description": "On the above date and time, the undersigned officer responded to a motor vehicle collision at the intersection of Broadway and West 42nd Street. Upon arrival, observed Vehicle 1 (2021 Honda Accord) with significant driver-side damage and Vehicle 2 (2019 Ford F-150) with front-end damage. \n\nInvestigation revealed that Vehicle 1 was traveling westbound on 42nd Street with a green light. Vehicle 2 was traveling northbound on Broadway. Witness statements and traffic camera footage confirm that Vehic"
+  },
+  "injuries": {
+    "diagnoses": [
+      "Cervical strain/sprain",
+      "Lumbar strain/sprain with radiculopathy",
+      "AC joint sprain, Grade I",
+      "Cervical strain/sprain",
+      "Lumbar strain/sprain with radiculopathy",
+      "AC joint sprain, Grade I",
+      "Cervical strain/sprain",
+      "Lumbar strain/sprain with radiculopathy",
+      "AC joint sprain, Grade I"
+    ],
+    "icd_codes": [
+      "S43.50XA",
+      "S33.5XXA",
+      "G44.329",
+      "S13.4XXA"
+    ],
+    "body_parts": [
+      "Shoulder",
+      "Lumbar Spine (Lower Back)",
+      "Cervical Spine (Neck)"
+    ],
+    "treatment_plan": [
+      "Cervical collar for comfort ",
+      "Flexeril 10mg TID for muscle spasm ",
+      "Ibuprofen 800mg TID with food ",
+      "Follow up with orthopedics within 1 week ",
+      "MRI cervical and lumbar spine recommended if symptoms persist ",
+      "Patient advised no work X 2 weeks ",
+      "Return precautions given ",
+      "Cervical collar for comfort ",
+      "Flexeril 10mg TID for muscle spasm ",
+      "Ibuprofen 800mg TID with food ",
+      "Follow up with orthopedics within 1 week ",
+      "MRI cervical and lumbar spine recommended if symptoms persist ",
+      "Patient advised no work X 2 weeks ",
+      "Return precautions given ",
+      "Cervical collar for comfort ",
+      "Flexeril 10mg TID for muscle spasm ",
+      "Ibuprofen 800mg TID with food ",
+      "Follow up with orthopedics within 1 week ",
+      "MRI cervical and lumbar spine recommended if symptoms persist ",
+      "Patient advised no work X 2 weeks ",
+      "Return precautions given "
+    ],
+    "work_restrictions": "No work x 2 weeks"
+  },
+  "medical_bills": {
+    "providers": [
+      "Bellevue Hospital Center"
+    ],
+    "total_charges": 6290.0,
+    "total_paid": 5032.0,
+    "total_owed": 630.0,
+    "liens": [
+      {
+        "provider": "Bellevue Hospital Center",
+        "amount": 630.0
+      }
+    ],
+    "cpt_codes": [
+      "96372",
+      "10075",
+      "99285",
+      "72131",
+      "72125",
+      "73030",
+      "99070"
+    ]
+  },
+  "insurance_coverage": {
+    "plaintiff_policy": {
+      "carrier": "State Farm",
+      "policy_number": "SF-2024-78901-NY",
+      "bi_limits": "$100,000/300,000",
+      "pip_limits": "$50,000",
+      "sum_limits": "$100,000/300,000"
+    },
+    "defendant_policy": {},
+    "pip_available": 50000.0,
+    "sum_available": 100000.0,
+    "total_available_coverage": 150000.0
+  },
+  "liability_analysis": {
+    "fault_determination": "James Thompson determined AT FAULT",
+    "contributing_factors": [
+      "Ran red light",
+      "Distracted driving (cell phone)",
+      "Ran red light",
+      "Distracted driving (cell phone)",
+      "Ran red light",
+      "Distracted driving (cell phone)"
+    ],
+    "evidence": [
+      "Traffic camera footage",
+      "2 witness statements",
+      "Traffic camera footage",
+      "2 witness statements",
+      "Traffic camera footage",
+      "2 witness statements"
+    ],
+    "liability_percentage": {
+      "plaintiff": 0,
+      "defendant": 100
+    }
+  },
+  "ny_serious_injury_analysis": {
+    "threshold_categories": [
+      "90/180 Day Rule - Substantial limitation of daily activities",
+      "Significant limitation of use of body function/system",
+      "Permanent consequential limitation"
+    ],
+    "supporting_evidence": [
+      "Work restriction documented",
+      "Range of motion limited to 30 degrees",
+      "Disc pathology documented on imaging",
+      "Radiculopathy diagnosis"
+    ],
+    "meets_threshold": true,
+    "notes": "Case likely meets NY serious injury threshold based on documented injuries and limitations."
+  },
+  "special_damages": {
+    "medical_expenses": {
+      "total_billed": 6290.0,
+      "paid_by_insurance": 5032.0,
+      "outstanding": 630.0,
+      "liens": [
+        {
+          "provider": "Bellevue Hospital Center",
+          "amount": 630.0
+        }
+      ]
+    },
+    "lost_wages": {
+      "estimated": 0.0,
+      "notes": "To be calculated based on employment records"
+    },
+    "total_special_damages": 6290.0
+  },
+  "recommended_actions": [
+    "Schedule MRI of cervical and lumbar spine as recommended",
+    "Obtain employment records for lost wage calculation",
+    "Request traffic camera footage via FOIL request",
+    "Send preservation letter to defendant's insurance carrier",
+    "Request certified copy of police report",
+    "Schedule IME if required by insurance carrier",
+    "Consider demand letter after maximum medical improvement"
+  ]
+}

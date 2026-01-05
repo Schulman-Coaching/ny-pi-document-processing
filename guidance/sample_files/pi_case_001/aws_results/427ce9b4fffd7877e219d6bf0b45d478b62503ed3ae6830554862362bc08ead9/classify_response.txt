@@ -1,0 +1,26 @@
+<thinking>
+To group the pages and classify the documents, I will:
+
+1. Review each page and its content
+2. Determine which class the page belongs to based on the expected inputs for each class
+3. Group together sequential pages that belong to the same class
+4. Return a JSON array with the class name and page indexes for each grouping
+
+</thinking>
+
+<json>
+[
+  {
+    "class": "MEDICAL_BILLS",
+    "page-indexes": [0, 1]
+  }
+]
+</json>
+
+<thinking>
+Page 0 contains a patient billing statement from a hospital with itemized charges, CPT codes, and payment information. This matches the expected inputs for the MEDICAL_BILLS class.
+
+Page 1 continues the billing statement with a medical lien notice, so it belongs to the same MEDICAL_BILLS document.
+
+There are no other pages in this document, so the JSON array only contains one grouping for the MEDICAL_BILLS class with page indexes 0 and 1.
+</thinking>

@@ -1,0 +1,13 @@
+<thinking>
+To group and classify the given document, I will go through the document page-by-page and group the sequential pages from the same document together. Then, for each grouping, I will identify the appropriate class from the list of classes provided.
+
+The document has 2 pages, with page-index values of 0 and 1. Since the pages are sequential and belong to the same document, I will group them together.
+
+Reviewing the content of the pages, I can see that this document is an auto insurance policy declarations. It contains information about the policy, the covered vehicle, the coverage summary, and compliance with New York state minimum requirements. This matches the "INSURANCE_POLICY" class, as it contains the expected inputs for that class.
+</thinking>
+
+<json>
+[
+{"class": "INSURANCE_POLICY", "page-indexes": [0, 1]}
+]
+</json>

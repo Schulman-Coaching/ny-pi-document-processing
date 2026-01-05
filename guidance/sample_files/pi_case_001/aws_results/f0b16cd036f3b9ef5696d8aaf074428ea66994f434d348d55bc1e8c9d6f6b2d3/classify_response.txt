@@ -1,0 +1,21 @@
+<thinking>
+1. Review the document page-by-page:
+   - Page 0: This page contains an emergency department medical record, including the patient's history, physical examination, diagnostic imaging, and assessment.
+   - Page 1: This page continues the emergency department medical record, including the treatment plan and physician's notes.
+
+2. Group the pages together as they belong to the same document.
+
+3. Identify the appropriate class for this document:
+   - The document contains a medical record, including patient information, diagnosis, and treatment plan. This matches the "MEDICAL_RECORDS" class.
+
+4. Construct the JSON array with the appropriate class and page-index values.
+</thinking>
+
+<json>
+[
+  {
+    "class": "MEDICAL_RECORDS",
+    "page-indexes": [0, 1]
+  }
+]
+</json>

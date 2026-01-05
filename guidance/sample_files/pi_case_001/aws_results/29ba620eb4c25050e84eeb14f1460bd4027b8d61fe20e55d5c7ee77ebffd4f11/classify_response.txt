@@ -1,0 +1,13 @@
+<thinking>
+To group and classify the document, I will review the document page-by-page and group the sequential pages from the same document together. Then, I will identify the appropriate class for each grouping based on the expected inputs for each class.
+
+The document contains 2 pages, with page-index values of 0 and 1. The content of the document appears to be a police accident report, specifically an NYPD MV-104 form. It contains all the expected inputs for the POLICE_REPORT class, including the report number, date of accident, location, vehicle and driver information, and a narrative description of the accident.
+
+Therefore, I will group the 2 pages together and classify them as a POLICE_REPORT.
+</thinking>
+
+<json>
+[
+{"class": "POLICE_REPORT", "page-indexes": [0, 1]}
+]
+</json>

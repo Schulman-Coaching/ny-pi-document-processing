@@ -1,0 +1,20 @@
+<thinking>
+1. Review the document page-by-page:
+   - Page 0: Contains an emergency department medical record
+   - Page 1: Continuation of the emergency department medical record
+
+2. Group the sequential pages from the same document together:
+   - Pages 0 and 1 belong to the same document.
+
+3. Identify the class for the document:
+   - The document contains a medical record, so the appropriate class is "MEDICAL_RECORDS".
+</thinking>
+
+<json>
+[
+  {
+    "class": "MEDICAL_RECORDS",
+    "page-indexes": [0, 1]
+  }
+]
+</json>

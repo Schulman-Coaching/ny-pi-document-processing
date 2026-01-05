@@ -1,0 +1,43 @@
+BELLEVUE HOSPITAL CENTER 
+
+Patient Billing Statement 
+
+Account Number: BH-2024-789456-001 Statement Date: 02/01/2024 Patient: Maria Rodriguez Date of Service: 01/15/2024 Billing Address: 456 East 78th Street, Apt 4B, New York, NY 10075 
+
+ITEMIZED CHARGES: 
+
+
+
+CPT Code	Description	Quantity	Amount
+99285	Emergency Dept Visit - Level 5 (High Severity)	1	$1,850.00
+72125	CT Cervical Spine without Contrast	1	$1,200.00
+72131	CT Lumbar Spine without Contrast	1	$1,200.00
+73030	X-ray Shoulder, Complete	1	$285.00
+96372	Therapeutic Injection	2	$180.00
+99070	Cervical Collar Supply	1	$125.00
+A0427	Ambulance Transport, Advanced Life Support	1	$1,450.00
+SUBTOTAL:	$6,290.00
+
+
+
+PAYMENT SUMMARY: 
+
+
+
+Total Charges:	$6,290.00
+Insurance Payment (State Farm PIP):	-$5,032.00
+Insurance Adjustment:	-$628.00
+Patient Responsibility:	$630.00
+Amount Due:	$630.00
+
+
+
+INSURANCE INFORMATION: 
+
+Primary: State Farm - Policy #SF-2024-78901-NY (No-Fault/PIP) Claim Status: PAID - $5,032.00 received 01/28/2024 Remaining PIP Benefits: $44,968.00 MEDICAL LIEN NOTICE: 
+
+A medical lien in the amount of $630.00 has been filed with respect to any third-party liability recovery. This lien attaches to any settlement or judgment obtained against the responsible party. Please notify our billing department of any legal representation. 
+
+For billing inquiries: (212) 562-4141 
+
+Payment due within 30 days 

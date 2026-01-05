@@ -1,0 +1,22 @@
+<thinking>
+1. Review the document page-by-page:
+   - Page 0: Contains a police accident report with information about the vehicles, drivers, accident details, and fault determination.
+   - Page 1: Continues the police accident report with additional details about the accident, violations issued, and witness information.
+
+2. Group the sequential pages from the same document together:
+   - Pages 0 and 1 belong to the same document.
+
+3. Identify the appropriate class for the document:
+   - The document matches the expected inputs for the POLICE_REPORT class, as it contains a police accident report with all the required information.
+
+4. Construct the JSON array with the class and page-index information:
+</thinking>
+
+<json>
+[
+  {
+    "class": "POLICE_REPORT",
+    "page-indexes": [0, 1]
+  }
+]
+</json>
